@@ -554,14 +554,14 @@ function animateCounter(el, target, suffix) {
     el.textContent = Math.floor(start).toLocaleString('en-IN') + suffix;
   }, 20);
 }
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    animateCounter(document.getElementById('counter1'), 5000, '+');
-    animateCounter(document.getElementById('counter2'), 25, '+');
-    animateCounter(document.getElementById('counter3'), 850, '+');
-  }, 500);
-});
-
+setTimeout(function() {
+  var c1 = document.getElementById('counter1');
+  var c2 = document.getElementById('counter2');
+  var c3 = document.getElementById('counter3');
+  if(c1) animateCounter(c1, 5000, '+');
+  if(c2) animateCounter(c2, 25, '+');
+  if(c3) animateCounter(c3, 850, '+');
+}, 800);
 // Total visitors
 (function() {
   var base = 4820;
