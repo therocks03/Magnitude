@@ -554,6 +554,7 @@ function animateCounter(el, target, suffix) {
     el.textContent = Math.floor(start).toLocaleString('en-IN') + suffix;
   }, 20);
 }
+// Run counters - script is at end of body so DOM is ready
 setTimeout(function() {
   var c1 = document.getElementById('counter1');
   var c2 = document.getElementById('counter2');
@@ -561,7 +562,8 @@ setTimeout(function() {
   if(c1) animateCounter(c1, 5000, '+');
   if(c2) animateCounter(c2, 25, '+');
   if(c3) animateCounter(c3, 850, '+');
-}, 800);
+}, 300);
+
 // Total visitors
 (function() {
   var base = 4820;
