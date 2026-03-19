@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mentorship Program — Magnitude Eduventures</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#C0392B;--red2:#E74C3C;--red-light:#FDECEC;--green:#27AE60;--green-light:#E8F8EF;--gold:#D4A017;--gold-light:#FFF8E7;--dark:#1A0A0A;--text:#2C1A1A;--text2:#6B4F4F;--bg:#FFFAF8;--bg2:#FFF5F5;--bg3:#F9F0F0;--white:#fff;--border:#F0DADA}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;overflow-x:hidden}
+
+/* NAV */
+nav{background:rgba(255,250,248,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%;position:sticky;top:0;z-index:100}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;max-width:1400px;margin:0 auto}
+.nav-logo img{height:48px;width:auto}
+.nav-links{display:flex;gap:24px;list-style:none;align-items:center}
+.nav-links a{color:var(--text);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--red2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{padding:80px 5% 60px;text-align:center;background:linear-gradient(135deg,#FFFAF8,#E8F8EF 60%,#FFF8E7);position:relative;overflow:hidden}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-light);border:1px solid rgba(39,174,96,.2);border-radius:50px;padding:6px 16px;font-size:12px;margin-bottom:20px;font-weight:600;color:var(--green)}
+.badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:800;line-height:1.1;margin-bottom:18px;color:var(--dark)}
+.hl-green{color:var(--green)}
+.hl-red{color:var(--red)}
+.hero-sub{color:var(--text2);font-size:16px;line-height:1.75;max-width:600px;margin:0 auto 32px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.btn-r{background:var(--red);color:#fff;padding:13px 28px;border-radius:9px;text-decoration:none;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .25s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-r:hover{background:var(--red2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(192,57,43,.3)}
+.btn-o{border:2px solid var(--red);color:var(--red);padding:11px 26px;border-radius:9px;text-decoration:none;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .2s;background:transparent}
+.btn-o:hover{background:var(--red-light)}
+
+/* SECTIONS */
+.sec{padding:80px 5%}
+.sec-alt{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stag{font-size:11px;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;font-weight:600}
+.stag::before{content:'';width:20px;height:2px;background:var(--red);border-radius:2px}
+h2{font-family:'Syne',sans-serif;font-size:clamp(26px,3vw,40px);font-weight:800;line-height:1.12;margin-bottom:14px;color:var(--dark)}
+.center h2{text-align:center}
+.ssub{color:var(--text2);font-size:15px;line-height:1.7;max-width:600px;margin-bottom:48px}
+.center .ssub{margin-left:auto;margin-right:auto;text-align:center}
+
+/* GRIDS */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto}
+
+/* CARDS */
+.card{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:28px;transition:all .3s}
+.card:hover{border-color:rgba(192,57,43,.35);transform:translateY(-4px);box-shadow:0 14px 32px rgba(192,57,43,.08)}
+.card-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.card-title{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:10px;color:var(--dark)}
+.card-desc{font-size:13px;color:var(--text2);line-height:1.7}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.check-list li{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text2);line-height:1.6}
+.check-list li::before{content:'✅';flex-shrink:0}
+
+/* COMPARISON CARDS */
+.compare-grid{display:flex;flex-direction:column;gap:16px}
+.compare-card{padding:20px;border-radius:12px}
+.compare-card.bad{background:#FFF5F5;border:1.5px solid rgba(192,57,43,.2)}
+.compare-card.good{background:var(--green-light);border:1.5px solid rgba(39,174,96,.25)}
+.compare-icon{font-size:24px;margin-bottom:10px}
+.compare-title{font-family:'Syne',sans-serif;font-weight:700;margin-bottom:8px;color:var(--dark);font-size:15px}
+.compare-desc{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* CTA */
+.cta-box{background:linear-gradient(135deg,var(--red),#A93226);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;max-width:900px;margin:0 auto}
+.cta-box h2{color:#fff;margin-bottom:14px}
+.cta-box p{opacity:.95;margin-bottom:28px;font-size:15px;line-height:1.7}
+.btn-white{background:#fff;color:var(--red);padding:13px 28px;border-radius:9px;text-decoration:none;font-weight:700;font-size:14px;transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.2)}
+
+/* FOOTER */
+footer{background:#1A0A0A;color:#F0E8E8;padding:48px 5% 24px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px;max-width:1200px;margin-left:auto;margin-right:auto}
+.foot-grid h5{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:16px;color:#fff}
+.foot-grid p{font-size:13px;line-height:1.7;margin-bottom:14px;color:#C9AFAF}
+.foot-grid a{color:#B09090;text-decoration:none;font-size:13px;display:block;margin-bottom:10px;transition:color .2s}
+.foot-grid a:hover{color:#F4A4A4}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;max-width:1200px;margin:0 auto}
+.foot-bottom p{font-size:12px;color:#7A5A5A}
+.social-row{display:flex;gap:10px}
+.soc{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;color:#B09090;transition:all .2s}
+.soc:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .grid3{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .grid3,.grid2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero{padding:48px 5%}
+  .sec{padding:60px 5%}
+  .cta-box{padding:40px 24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://storage.googleapis.com/msgsndr/HaVav0skhgONiuRmE5RS/media/67932d7c65e0ccd8c1b67c93.png" alt="Magnitude Eduventures">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Programs</a></li>
+      <li><a href="mentorship.html" class="active">Mentorship</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="team.html">Faculty</a></li>
+    </ul>
+    <a href="tel:+919024233390" class="nav-cta">📞 Contact Us</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">🧭 IIT-JEE Mentorship Program</div>
+  <h1>Not Just <span class="hl-green">"What to Study"</span><br>But <span class="hl-red">"How to Study"</span></h1>
+  <p class="hero-sub">Coachings only teach you what to study. Our mentors teach you HOW — the right strategy, daily planning, and personal handholding that top rankers had.</p>
+  <div class="btns">
+    <a href="https://wa.me/919024233390" class="btn-r" target="_blank">💬 Get a Mentor on WhatsApp</a>
+    <a href="index.html" class="btn-o">← Back to Home</a>
+  </div>
+</section>
+
+<!-- WHY MENTORSHIP -->
+<section class="sec">
+  <div class="grid2">
+    <div>
+      <div class="stag">The Real Problem</div>
+      <h2>Why Do Most Students<br>Fail Despite Hard Work?</h2>
+      <p style="color:var(--text2);font-size:15px;line-height:1.75;margin-bottom:20px">To crack IIT-JEE or NEET, you need to know both <strong>what</strong> to study and <strong>how</strong> to study. Most coachings only teach the syllabus — they never teach strategy.</p>
+      <p style="color:var(--text2);font-size:15px;line-height:1.75;margin-bottom:20px">Top rankers were lucky — they had an elder bhaiya/didi or special batch where someone guided them personally. Magnitude's Mentorship Program gives every student that same personal guidance.</p>
+      <p style="color:var(--text2);font-size:15px;line-height:1.75">Hard work in the wrong direction doesn't lead to success. Your mentor makes sure you're always moving in the right direction.</p>
+    </div>
+    <div class="compare-grid">
+      <div class="compare-card bad">
+        <div class="compare-icon">❌</div>
+        <div class="compare-title">Without Mentorship</div>
+        <div class="compare-desc">Study randomly, panic before exams, no direction, repeat mistakes, lose motivation.</div>
+      </div>
+      <div class="compare-card good">
+        <div class="compare-icon">✅</div>
+        <div class="compare-title">With Magnitude Mentorship</div>
+        <div class="compare-desc">Clear daily targets, right strategy, doubts solved instantly, motivation restored, consistent improvement.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="sec sec-alt">
+  <div class="center">
+    <div class="stag">What's Included</div>
+    <h2>Everything Your Mentor Does for You</h2>
+    <p class="ssub">Your mentor is your personal IIT-JEE/NEET coach — available every day.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-light)">📚</div>
+      <div class="card-title">Personalised Study Material</div>
+      <div class="card-desc">Your mentor handpicks study material tailored to your level — covering JEE Mains, Advanced, Boards, KVPY, and Olympiads.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--red-light)">📅</div>
+      <div class="card-title">Custom Curriculum Planning</div>
+      <div class="card-desc">Brainstorm with your mentor to build a personalised schedule — syllabus completion, backlog, revisions, and exam days all planned.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--gold-light)">❓</div>
+      <div class="card-title">PCM Doubt Solving</div>
+      <div class="card-desc">Unlimited doubt sessions on Physics, Chemistry, and Maths. Ask from any book, any topic — get a timely and explained solution.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-light)">📊</div>
+      <div class="card-title">Test Series & Analysis</div>
+      <div class="card-desc">Regular tests for Boards, Mains, and Advanced. Post-test deep analysis session to convert weaknesses into strengths.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--red-light)">🎤</div>
+      <div class="card-title">Live Webinars with IITians</div>
+      <div class="card-desc">Regular webinars with high-ranking IITians — motivation, tips & tricks, life at IITs, and future doubt clearing sessions.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--gold-light)">🎯</div>
+      <div class="card-title">Daily Target Setting</div>
+      <div class="card-desc">Your mentor sets daily tasks, tracks completion, motivates you when stressed, and ensures you're always on track.</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLETE ECOSYSTEM -->
+<section class="sec">
+  <div class="center">
+    <div class="stag">WHAT YOU GET</div>
+    <h2>Complete Mentorship Ecosystem</h2>
+    <p class="ssub">We don't just teach — we guide, support, and walk with you through your entire journey.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon" style="background:var(--red-light)">👨‍🎓</div>
+      <div class="card-title">Weekly 1:1 Sessions</div>
+      <p class="card-desc">60-minute personalized sessions every week with your dedicated IITian mentor. Discuss doubts, plan your week, review progress.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:#E8F4FF">🧠</div>
+      <div class="card-title">Exam Strategy</div>
+      <p class="card-desc">Learn time management, paper-solving tactics, revision techniques, and smart guessing strategies from IIT toppers.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:#F3E8FF">💬</div>
+      <div class="card-title">Mental Wellness</div>
+      <p class="card-desc">Stress management, dealing with exam pressure, building confidence, handling parental expectations — we're here for you.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-light)">📖</div>
+      <div class="card-title">Goal Tracking</div>
+      <p class="card-desc">Set weekly targets, track daily progress, measure improvement. Your mentor keeps you accountable and motivated.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--gold-light)">🔄</div>
+      <div class="card-title">Progress Reports</div>
+      <p class="card-desc">Detailed weekly feedback. Know exactly where you stand, what's improving, and what needs more focus.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--red-light)">🏛️</div>
+      <div class="card-title">Career Counseling</div>
+      <p class="card-desc">Guidance on college selection, branch choices, future career paths, and life beyond JEE/NEET.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="sec sec-alt">
+  <div class="center">
+    <div class="stag">HOW IT WORKS</div>
+    <h2>Your Mentorship Journey</h2>
+    <p class="ssub">From onboarding to exam day — here's how we support you every step of the way.</p>
+  </div>
+  <div class="grid2" style="max-width:1000px">
+    <div class="card">
+      <div class="card-title">Step 1: Diagnostic Assessment</div>
+      <p class="card-desc">We start with a comprehensive assessment to understand your current level, learning style, strengths, and improvement areas.</p>
+      <ul class="check-list">
+        <li>Subject-wise diagnostic test</li>
+        <li>Learning style analysis</li>
+        <li>Goal & timeline discussion</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Step 2: Mentor Matching</div>
+      <p class="card-desc">You're paired with an IITian mentor who matches your needs, personality, and exam goals. Not happy? Switch anytime.</p>
+      <ul class="check-list">
+        <li>Meet your mentor on intro call</li>
+        <li>Review their background & expertise</li>
+        <li>Switch mentors if needed</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Step 3: Custom Plan Creation</div>
+      <p class="card-desc">Your mentor creates a personalized study roadmap covering all subjects, topics, and timelines leading to your exam.</p>
+      <ul class="check-list">
+        <li>Chapter-wise breakdown</li>
+        <li>Weekly targets & milestones</li>
+        <li>Revision & test schedule</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Step 4: Weekly Check-ins</div>
+      <p class="card-desc">Regular 1:1 sessions to review progress, solve doubts, adjust plans, and keep you on track. Your mentor is your accountability partner.</p>
+      <ul class="check-list">
+        <li>Progress review & feedback</li>
+        <li>Doubt clarification</li>
+        <li>Next week's action plan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHO YOUR MENTORS ARE -->
+<section class="sec">
+  <div class="center">
+    <div class="stag">WHO YOUR MENTORS ARE</div>
+    <h2>Learn from People Who've Done It</h2>
+    <p class="ssub">All our mentors are IIT Bombay, Delhi & Kanpur alumni who've cleared the same exams you're preparing for.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon" style="background:var(--red-light)">🏆</div>
+      <div class="card-title">IIT Alumni Only</div>
+      <p class="card-desc">Every mentor is from IIT Bombay, Delhi, or Kanpur — the top 3 IITs in India. No exceptions.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-light)">📚</div>
+      <div class="card-title">Subject Experts</div>
+      <p class="card-desc">Matched with mentors who specialize in your target exam — JEE, NEET, or Boards.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--gold-light)">💡</div>
+      <div class="card-title">Trained & Certified</div>
+      <p class="card-desc">All mentors go through Magnitude's training program on effective mentoring & student psychology.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec">
+  <div class="cta-box">
+    <h2>Ready to Get Your IITian Mentor?</h2>
+    <p>Book a free 30-minute trial session. Meet your mentor, discuss your goals, see if it's a fit — zero commitment.</p>
+    <a href="https://wa.me/919024233390" class="btn-white" target="_blank">📞 Book Free Trial Session →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h5>Magnitude Eduventures</h5>
+      <p>India's first flexible coaching platform by top IITian educators. Learn from home, choose your teachers, crack your dream exam.</p>
+      <p style="margin-top:16px">
+        📞 India: <a href="tel:+919024233390" style="color:#E8C7C7">+91-90242-33390</a><br>
+        📞 UAE: <a href="tel:+971557525439" style="color:#E8C7C7">+971-55-752-5439</a>
+      </p>
+    </div>
+    <div>
+      <h5>Programs</h5>
+      <a href="courses.html">IIT-JEE Coaching</a>
+      <a href="courses.html">NEET Preparation</a>
+      <a href="courses.html">CBSE Boards</a>
+      <a href="test-series.html">Test Series</a>
+      <a href="mentorship.html">Mentorship</a>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <a href="one-to-one.html">1-on-1 Tuition</a>
+      <a href="vidya-ai.html">Magnitude AI Tutor</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="team.html">Our Faculty</a>
+      <a href="results.html">Success Stories</a>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <a href="online-school.html">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Magnitude Eduventures. All rights reserved.</p>
+    <div class="social-row">
+      <a href="https://www.youtube.com/channel/UCHcug0HZ4h6jkNODJgRMeyw" class="soc" target="_blank">▶</a>
+      <a href="https://www.linkedin.com/company/radicals-iit-jee" class="soc" target="_blank">in</a>
+      <a href="https://www.facebook.com/MagnitudeEduventures" class="soc" target="_blank">f</a>
+      <a href="https://twitter.com/Magnitude_APP" class="soc" target="_blank">𝕏</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
