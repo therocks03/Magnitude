@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Online School — Magnitude Eduventures</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#C0392B;--red2:#E74C3C;--red-light:#FDECEC;--green:#27AE60;--green-light:#E8F8EF;--gold:#D4A017;--gold-light:#FFF8E7;--dark:#1A0A0A;--text:#2C1A1A;--text2:#6B4F4F;--bg:#FFFAF8;--bg2:#FFF5F5;--bg3:#F9F0F0;--white:#fff;--border:#F0DADA}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;overflow-x:hidden}
+
+
+/* NAV WITH DROPDOWNS */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1400px;margin:0 auto}
+.nav-logo img{height:48px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:8px;list-style:none;align-items:center}
+.nav-item{position:relative}
+.nav-item>a{color:var(--text);text-decoration:none;font-size:14px;font-weight:500;padding:8px 16px;display:flex;align-items:center;gap:4px;border-radius:6px;transition:all .2s}
+.nav-item>a:hover{color:var(--red);background:var(--red-light)}
+.nav-item.active>a{color:var(--red)}
+.dropdown-arrow{font-size:10px;transition:transform .2s}
+.nav-item:hover .dropdown-arrow{transform:rotate(180deg)}
+
+/* Dropdown Menu */
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--white);border:1px solid var(--border);border-radius:12px;min-width:240px;padding:8px;margin-top:8px;box-shadow:0 8px 24px rgba(0,0,0,0.08);opacity:0;transform:translateY(-10px);transition:all .3s}
+.nav-item:hover .dropdown{display:block;opacity:1;transform:translateY(0)}
+.dropdown a{display:block;padding:10px 14px;color:var(--text2);text-decoration:none;font-size:13px;border-radius:8px;transition:all .2s;white-space:nowrap}
+.dropdown a:hover{background:var(--red-light);color:var(--red)}
+.dropdown-divider{height:1px;background:var(--border);margin:8px 0}
+
+.nav-right{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.nav-phone{font-size:14px;color:var(--text);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-phone:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--red2);transform:translateY(-1px)}
+
+/* Mobile Menu */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 5%;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,0.08);max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-menu.open{display:block}
+.mobile-nav-group{margin-bottom:24px}
+.mobile-nav-group-title{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text2);font-weight:700;margin-bottom:12px;padding-left:4px}
+.mobile-menu a{color:var(--text2);text-decoration:none;font-size:14px;padding:8px 4px;display:block;transition:color .2s}
+.mobile-menu a:hover{color:var(--red)}
+.mobile-menu .nav-phone{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+
+/* HERO */
+.hero{padding:100px 5% 80px;text-align:center;background:linear-gradient(135deg,#FFFAF8,#FFF2F2 60%,#FFF8E7);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(192,57,43,0.08),transparent);pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--red-light);border:1px solid rgba(192,57,43,.2);border-radius:50px;padding:6px 16px;font-size:12px;margin-bottom:20px;font-weight:600;color:var(--red)}
+.badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--red);animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+h1{font-family:'Syne',sans-serif;font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1.1;margin-bottom:20px;color:var(--dark)}
+.hl-red{color:var(--red)}
+.hero-sub{color:var(--text2);font-size:17px;line-height:1.8;max-width:700px;margin:0 auto 36px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.btn-r{background:var(--red);color:#fff;padding:13px 28px;border-radius:9px;text-decoration:none;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .25s}
+.btn-r:hover{background:var(--red2);transform:translateY(-2px);box-shadow:0 10px 28px rgba(192,57,43,.3)}
+.btn-o{border:2px solid var(--red);color:var(--red);padding:11px 26px;border-radius:9px;text-decoration:none;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:8px;transition:all .2s;background:transparent}
+.btn-o:hover{background:var(--red-light)}
+.stats-row{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;margin-top:48px}
+.stat{text-align:center}
+.stat-num{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;color:var(--red);margin-bottom:6px}
+.stat-label{font-size:14px;color:var(--text2)}
+
+/* SECTIONS */
+.sec{padding:80px 5%}
+.sec-alt{background:var(--bg3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.stag{font-size:11px;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;font-weight:600}
+.stag::before{content:'';width:20px;height:2px;background:var(--red);border-radius:2px}
+.center{text-align:center}
+h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:800;line-height:1.12;margin-bottom:14px;color:var(--dark)}
+.ssub{color:var(--text2);font-size:15px;line-height:1.7;max-width:600px;margin-bottom:48px}
+.center .ssub{margin-left:auto;margin-right:auto}
+
+/* GRIDS */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1200px;margin:0 auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto}
+
+/* CARDS */
+.card{background:#fff;border:1.5px solid var(--border);border-radius:18px;padding:32px;transition:all .3s}
+.card:hover{border-color:rgba(192,57,43,.35);transform:translateY(-4px);box-shadow:0 14px 32px rgba(192,57,43,.08)}
+.card-icon{width:60px;height:60px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px}
+.card-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;margin-bottom:12px;color:var(--dark)}
+.card-desc{font-size:14px;color:var(--text2);line-height:1.75;margin-bottom:16px}
+.pill-tag{display:inline-block;font-size:10px;padding:4px 12px;border-radius:50px;font-weight:700;text-transform:uppercase;margin:4px 4px 4px 0}
+.tag-r{background:rgba(192,57,43,.08);color:var(--red);border:1px solid rgba(192,57,43,.2)}
+.tag-g{background:var(--green-light);color:var(--green);border:1px solid rgba(39,174,96,.25)}
+.tag-gold{background:var(--gold-light);color:var(--gold);border:1px solid rgba(212,160,23,.3)}
+
+/* STORY */
+.story-content{max-width:800px;margin:0 auto}
+.story-content p{font-size:15px;line-height:1.9;color:var(--text2);margin-bottom:24px}
+.story-content h3{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:var(--dark);margin-top:36px;margin-bottom:16px}
+
+/* CTA */
+.cta-box{background:linear-gradient(135deg,var(--red),#A93226);color:#fff;border-radius:20px;padding:56px 40px;text-align:center;max-width:900px;margin:0 auto}
+.cta-box h2{color:#fff;margin-bottom:14px}
+.cta-box p{opacity:.95;margin-bottom:28px;font-size:15px;line-height:1.7}
+.btn-white{background:#fff;color:var(--red);padding:13px 28px;border-radius:9px;text-decoration:none;font-weight:700;font-size:14px;transition:.25s;display:inline-flex;align-items:center;gap:8px}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.2)}
+
+/* FOOTER */
+footer{background:#1A0A0A;color:#F0E8E8;padding:48px 5% 24px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px;max-width:1200px;margin-left:auto;margin-right:auto}
+.foot-grid h5{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:16px;color:#fff}
+.foot-grid p{font-size:13px;line-height:1.7;margin-bottom:14px;color:#C9AFAF}
+.foot-grid a{color:#B09090;text-decoration:none;font-size:13px;display:block;margin-bottom:10px;transition:color .2s}
+.foot-grid a:hover{color:#F4A4A4}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;max-width:1200px;margin:0 auto}
+.foot-bottom p{font-size:12px;color:#7A5A5A}
+.social-row{display:flex;gap:10px}
+.soc{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;color:#B09090;transition:all .2s}
+.soc:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+  .grid3{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .grid3,.grid2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .hero{padding:60px 5%}
+  .sec{padding:60px 5%}
+  .cta-box{padding:40px 24px}
+  .stats-row{gap:32px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://storage.googleapis.com/msgsndr/HaVav0skhgONiuRmE5RS/media/67932d7c65e0ccd8c1b67c93.png" alt="Magnitude Eduventures">
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item active">
+        <a href="#">Programs <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="courses.html">📚 IIT-JEE & NEET Courses</a>
+          <a href="online-school.html">🏫 Online School</a>
+          <a href="test-series.html">📝 Test Series</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#">Learning <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="vidya-ai.html">🤖 Vidya AI Tutor</a>
+          <a href="one-to-one.html">👨‍🏫 One-to-One Tuition</a>
+          <a href="mentorship.html">🎯 Mentorship Program</a>
+          <div class="dropdown-divider"></div>
+          <a href="book-session.html">📅 Book a Session</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#">About <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="team.html">👥 Our IITian Team</a>
+          <a href="results.html">🏆 Success Stories</a>
+          <a href="counselling.html">🎓 College Counselling</a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+919024233390" class="nav-phone">📞 +91-90242-33390</a>
+      <a href="index.html#enroll" class="nav-cta">Get Started</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-nav-group">
+    <a href="index.html">🏠 Home</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">Programs</div>
+    <a href="courses.html">📚 IIT-JEE & NEET Courses</a>
+    <a href="online-school.html">🏫 Online School</a>
+    <a href="test-series.html">📝 Test Series</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">Learning</div>
+    <a href="vidya-ai.html">🤖 Vidya AI Tutor</a>
+    <a href="one-to-one.html">👨‍🏫 One-to-One Tuition</a>
+    <a href="mentorship.html">🎯 Mentorship Program</a>
+    <a href="book-session.html">📅 Book a Session</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">About</div>
+    <a href="team.html">👥 Our IITian Team</a>
+    <a href="results.html">🏆 Success Stories</a>
+    <a href="counselling.html">🎓 College Counselling</a>
+  </div>
+  <a href="tel:+919024233390" class="nav-phone">📞 +91-90242-33390</a>
+</div><section class="hero">
+  <div class="badge">🎓 India's First Flexible Online School</div>
+  <h1>Live Interactive Batches for<br><span class="hl-red">IIT-JEE, NEET & CBSE</span></h1>
+  <p class="hero-sub">Real-time two-way classes from top IITians. Choose your batch, subject and teacher. Study from anywhere — no compromise on quality. Built by IIT Bombay, Delhi & Kanpur alumni who believe education should adapt to students — not the other way around.</p>
+  <div class="btns">
+    <a href="https://wa.me/919024233390" class="btn-r" target="_blank">💬 Enquire on WhatsApp</a>
+    <a href="https://play.google.com/store/apps/details?id=com.mohit.ingenium.tca375" class="btn-o" target="_blank">📥 Download App</a>
+  </div>
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-num">12,000+</div>
+      <div class="stat-label">Active Students</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2,800+</div>
+      <div class="stat-label">IIT/NEET Selections</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">40+</div>
+      <div class="stat-label">IITian Educators</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4.8★</div>
+      <div class="stat-label">Student Rating</div>
+    </div>
+  </div>
+</section>
+
+<!-- BATCHES -->
+<section class="sec">
+  <div class="center">
+    <div class="stag">Our Batches</div>
+    <h2>Choose Your Program</h2>
+    <p class="ssub">One year & two year programs — complete course or individual subjects.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon" style="background:var(--red-light)">🏆</div>
+      <div class="card-title">IIT-JEE Program</div>
+      <div class="card-desc">Complete preparation for JEE Main & Advanced with IITian faculty.</div>
+      <div>
+        <span class="pill-tag tag-r">XI + IIT-JEE (2-Year)</span>
+        <span class="pill-tag tag-r">XII + IIT-JEE (1-Year)</span>
+        <span class="pill-tag tag-r">Dropper / Repeater Batch</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-light)">🩺</div>
+      <div class="card-title">NEET-UG Program</div>
+      <div class="card-desc">Physics, Chemistry & Biology for NEET-UG by medical experts.</div>
+      <div>
+        <span class="pill-tag tag-g">XI + NEET (2-Year)</span>
+        <span class="pill-tag tag-g">XII + NEET (1-Year)</span>
+        <span class="pill-tag tag-g">NEET Dropper Batch</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--gold-light)">📚</div>
+      <div class="card-title">CBSE / State Boards</div>
+      <div class="card-desc">Board exam preparation with concept clarity and exam strategy.</div>
+      <div>
+        <span class="pill-tag tag-gold">Class IX & X</span>
+        <span class="pill-tag tag-gold">Class XI</span>
+        <span class="pill-tag tag-gold">Class XII</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR MISSION -->
+<section class="sec sec-alt">
+  <div class="center">
+    <div class="stag">OUR MISSION</div>
+    <h2>Why We Built Magnitude</h2>
+    <p class="ssub">Traditional coaching has failed millions of students. Rigid schedules, one-size-fits-all teaching, no teacher choice, and sky-high fees. We're fixing that.</p>
+  </div>
+  <div class="story-content">
+    <p>Magnitude was born from a simple frustration: why do students have to travel 2 hours to a coaching center, sit in a batch of 100+ students, and learn from teachers they didn't even choose?</p>
+    
+    <p>Our founders — all IIT Bombay, Delhi & Kanpur alumni — saw friends and juniors struggle not because they lacked talent, but because the coaching system was broken. Expensive, inflexible, and impersonal.</p>
+    
+    <h3>The Magnitude Difference</h3>
+    <p>We built Magnitude on three core principles:</p>
+    <p><strong>1. Student Choice:</strong> You pick your teachers. Try different educators, switch anytime, find the perfect match. Education is personal — your teacher should be too.</p>
+    
+    <p><strong>2. Complete Flexibility:</strong> Study from home, school, a café, anywhere. Attend live or watch recordings. Build your own schedule. No rigid 6 AM - 10 PM marathons.</p>
+    
+    <p><strong>3. Transparent & Affordable:</strong> ₹499/month gets you everything — live classes, test series, AI doubt-solving, recordings. No ₹2L annual fees. Cancel anytime.</p>
+    
+    <h3>Our Impact</h3>
+    <p>Since 2020, we've helped over 12,000 students across India (and UAE, Singapore, USA) prepare for JEE, NEET, and Boards. 2,800+ of them have cracked IIT or top medical colleges.</p>
+    
+    <p>But beyond the numbers, what we're most proud of is this: students actually enjoy learning with us. They're not stressed, they're not burnt out — they're motivated, confident, and happy.</p>
+  </div>
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="sec">
+  <div class="center">
+    <div class="stag">WHAT MAKES US DIFFERENT</div>
+    <h2>Why Students Choose Magnitude</h2>
+    <p class="ssub">We're not just another ed-tech platform. Here's what sets us apart.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-icon" style="background:var(--red-light)">🎓</div>
+      <div class="card-title">All IITian Faculty</div>
+      <p class="card-desc">Every single educator is from IIT Bombay, Delhi, or Kanpur. No exceptions, no coaching center teachers — only IIT alumni who've been through the exact journey you're on.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-light)">🔄</div>
+      <div class="card-title">Pick Your Teachers</div>
+      <p class="card-desc">Try sample classes, read reviews, then choose. Not happy? Switch to someone else instantly. Your education, your choice.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--gold-light)">📚</div>
+      <div class="card-title">Live + Recorded</div>
+      <p class="card-desc">Attend live classes or watch recordings — your call. Every session is recorded and available forever. Learn at your own pace.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:#E8F4FF">🤖</div>
+      <div class="card-title">Magnitude AI Tutor</div>
+      <p class="card-desc">Stuck at 2 AM? Upload your doubt, get step-by-step solutions instantly. Our AI has solved 500,000+ doubts and counting.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:#F3E8FF">💰</div>
+      <div class="card-title">₹499/Month</div>
+      <p class="card-desc">All-inclusive pricing. Live classes, test series, AI tutor, recordings, study materials — everything. No hidden fees. Cancel anytime.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon" style="background:var(--green-light)">🏆</div>
+      <div class="card-title">Proven Results</div>
+      <p class="card-desc">2,800+ IIT/NEET selections in 2024. AIR ranks in double digits. 95%+ board scores. Real students, real results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- OUR VALUES -->
+<section class="sec sec-alt">
+  <div class="center">
+    <div class="stag">OUR VALUES</div>
+    <h2>What We Stand For</h2>
+    <p class="ssub">These principles guide everything we do — from product decisions to how we treat students.</p>
+  </div>
+  <div class="grid3">
+    <div class="card">
+      <div class="card-title">🎯 Student-First, Always</div>
+      <p class="card-desc">Every decision starts with: "Is this best for the student?" Not revenue, not growth — students come first.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">💎 Quality Over Quantity</div>
+      <p class="card-desc">We hire 1 in 50 teachers who apply. Only the best IITians who genuinely care about teaching make it through.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🔓 Radical Transparency</div>
+      <p class="card-desc">No hidden fees, no fake reviews, no manipulative sales tactics. What you see is what you get.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🌱 Continuous Innovation</div>
+      <p class="card-desc">Education hasn't changed in 50 years. We're constantly experimenting with AI, personalization, and better learning methods.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🤝 Empathy & Kindness</div>
+      <p class="card-desc">JEE/NEET prep is stressful. We treat every student with kindness, patience, and genuine care.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🚀 Think Long-Term</div>
+      <p class="card-desc">We're not building a 2-year coaching business. We're building an institution that will educate millions for decades.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec">
+  <div class="cta-box">
+    <h2>Join 12,000+ Students Learning with Magnitude</h2>
+    <p>Start your free 7-day trial today. Attend live classes, try the AI tutor, take tests — experience everything before paying a rupee.</p>
+    <a href="https://wa.me/919024233390" class="btn-white" target="_blank">📞 Start Free Trial →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h5>Magnitude Eduventures</h5>
+      <p>India's first flexible coaching platform by top IITian educators. Learn from home, choose your teachers, crack your dream exam.</p>
+      <p style="margin-top:16px">
+        📞 India: <a href="tel:+919024233390" style="color:#E8C7C7">+91-90242-33390</a><br>
+        📞 UAE: <a href="tel:+971557525439" style="color:#E8C7C7">+971-55-752-5439</a>
+      </p>
+    </div>
+    <div>
+      <h5>Programs</h5>
+      <a href="courses.html">IIT-JEE Coaching</a>
+      <a href="courses.html">NEET Preparation</a>
+      <a href="courses.html">CBSE Boards</a>
+      <a href="test-series.html">Test Series</a>
+      <a href="mentorship.html">Mentorship</a>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <a href="one-to-one.html">1-on-1 Tuition</a>
+      <a href="vidya-ai.html">Magnitude AI Tutor</a>
+      <a href="counselling.html">Counselling</a>
+      <a href="team.html">Our Faculty</a>
+      <a href="results.html">Success Stories</a>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <a href="online-school.html">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2026 Magnitude Eduventures. All rights reserved.</p>
+    <div class="social-row">
+      <a href="https://www.youtube.com/channel/UCHcug0HZ4h6jkNODJgRMeyw" class="soc" target="_blank">▶</a>
+      <a href="https://www.linkedin.com/company/radicals-iit-jee" class="soc" target="_blank">in</a>
+      <a href="https://www.facebook.com/MagnitudeEduventures" class="soc" target="_blank">f</a>
+      <a href="https://twitter.com/Magnitude_APP" class="soc" target="_blank">𝕏</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+</script>
+</body>
+</html>
