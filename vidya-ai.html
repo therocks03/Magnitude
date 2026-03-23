@@ -1128,49 +1128,13 @@ footer{background:var(--dark);color:#F0E8E8;padding:44px 5% 24px}
           <option value="Both JEE & NEET">Both JEE & NEET</option>
         </select>
       </div>
-    <button class="cta-btn" onclick="submitForm()">🚀 Start Learning Free</button>
+      <button class="gate-submit" id="gateSubmit" onclick="submitGate()">
+        🚀 Start Learning Free
+      </button>
     </div>
     <p class="gate-privacy">🔒 Your info is safe. No spam. <a href="#">Privacy Policy</a></p>
   </div>
 </div>
-
-<script>
-  // ─── Set your WhatsApp number here ───
-  const WHATSAPP_NUMBER = '919024233390'; // format: 91XXXXXXXXXX
-
-  function submitForm() {
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const exam = document.getElementById('exam').value;
-
-    if (!name) { alert('Please enter your name.'); return; }
-    if (!/^\d{10}$/.test(phone)) { alert('Please enter a valid 10-digit mobile number.'); return; }
-
-    const now = new Date();
-    const timeStr = now.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', hour12: true });
-
-    const msg =
-`🎓 *New Lead – Vidya AI Tutor*
-
-👤 *Name:* ${name}
-📱 *Mobile:* +91 ${phone}
-📚 *Preparing For:* ${exam}
-🕐 *Submitted:* ${timeStr}
-
-_Sent from Magnitude Eduventures website_`;
-
-    const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-
-    document.getElementById('successMsg').textContent = `Welcome, ${name}! Your details are ready to send via WhatsApp.`;
-    document.getElementById('waLink').href = waURL;
-    document.getElementById('successOverlay').classList.add('show');
-    window.open(waURL, '_blank');
-  }
-
-  document.getElementById('successOverlay').addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('show');
-  });
-</script>
 
 
 <!-- NAV -->
