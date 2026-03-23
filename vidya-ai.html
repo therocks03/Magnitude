@@ -1128,28 +1128,8 @@ footer{background:var(--dark);color:#F0E8E8;padding:44px 5% 24px}
           <option value="Both JEE & NEET">Both JEE & NEET</option>
         </select>
       </div>
-  <input type="text" id="name" placeholder="Enter Name">
-<input type="tel" id="phone" placeholder="Enter Phone">
-
-<button onclick="sendToWhatsApp()">Send</button>
+      <button class="gate-submit" id="gateSubmit" onclick="submitGate()">
         🚀 Start Learning Free
-<script>
-function sendToWhatsApp() {
-  let name = document.getElementById("name").value.trim();
-  let phone = document.getElementById("phone").value.trim();
-
-  if (!name || !phone) {
-    alert("Please fill all fields");
-    return;
-  }
-
-  let message = `Name: ${name}\nPhone: ${phone}`;
-  
-  let url = `https://wa.me/919024233390?text=${encodeURIComponent(message)}`;
-
-  window.open(url, "_blank");
-}
-</script>
       </button>
     </div>
     <p class="gate-privacy">🔒 Your info is safe. No spam. <a href="#">Privacy Policy</a></p>
