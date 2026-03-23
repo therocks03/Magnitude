@@ -1055,6 +1055,12 @@ footer{background:var(--dark);color:#F0E8E8;padding:52px 5% 30px}
 .play-btn{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:10px 16px;text-decoration:none;color:#F0E8E8;font-size:13px;transition:all .2s;margin-top:14px}
 .play-btn:hover{border-color:rgba(192,57,43,0.4);color:#F4A4A4}
 
+/* FLOATING WA */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:999;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,0.4);transition:all .25s;animation:waBounce 2s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,0.5)}
+@keyframes waBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.wa-tooltip{position:fixed;bottom:88px;right:24px;z-index:999;background:var(--dark);color:#fff;font-size:12px;padding:7px 14px;border-radius:8px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s}
+.wa-float:hover~.wa-tooltip{opacity:1}
 
 /* SCROLL REVEAL */
 .reveal{opacity:1;transform:none}
@@ -1082,6 +1088,9 @@ footer{background:var(--dark);color:#F0E8E8;padding:52px 5% 30px}
 </head>
 <body>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/9133390" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+<div class="wa-tooltip">Chat with us on WhatsApp</div>
 
 <!-- NAV -->
 <nav>
@@ -1153,12 +1162,19 @@ footer{background:var(--dark);color:#F0E8E8;padding:52px 5% 30px}
     <a href="team.html">👥 Meet Our Team</a>
     <a href="results.html">🏆 Success Stories</a>
   </div>
+  <a href="tel:+919024233390" class="nav-phone">📞 +91-90242-33390</a>
+</div>
+</div>
+
 <!-- HERO -->
-  <div style="position:relative;width:100%;height:100vh;">
+<div style="position:relative;width:100%;height:100vh;">
   <iframe 
     src="https://magnitudeacademy.ingeniumedu.com"
     style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;">
   </iframe>
 </div>
+</div>
+
+
 </body>
 </html>
