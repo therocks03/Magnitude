@@ -1454,6 +1454,19 @@ footer{background:var(--dark);color:#F0E8E8;padding:44px 5% 24px}
       <div class="faq-q" onclick="toggleFaq(this)">Can I book sessions in Hindi? <span class="arrow">▼</span></div>
       <div class="faq-a">Absolutely. All sessions are available in Hindi, English, or Hinglish. Select your preferred medium in the booking form.</div>
     </div>
+    <script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+
+  // Close others (optional)
+  document.querySelectorAll('.faq-item').forEach(faq => {
+    if (faq !== item) faq.classList.remove('open');
+  });
+
+  // Toggle current
+  item.classList.toggle('open');
+}
+</script>
   </div>
 </section>
 
