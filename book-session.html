@@ -1668,19 +1668,4 @@ function submitBooking() {
     window.open('https://wa.me/919024233390?text=' + encodeURIComponent(msg), '_blank');
   }, 700);
 }
-<script>
-function toggleFaq(element) {
-  const parent = element.parentElement;
-  
-  // Close all other FAQs (optional - accordion behavior)
-  document.querySelectorAll('.faq-item').forEach(item => {
-    if (item !== parent) {
-      item.classList.remove('open');
-    }
-  });
-
-  // Toggle current
-  parent.classList.toggle('open');
-}
-</script>
 // ── Scroll reveal ──────────────────────────
