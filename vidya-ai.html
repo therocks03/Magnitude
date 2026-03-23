@@ -1131,13 +1131,11 @@ footer{background:var(--dark);color:#F0E8E8;padding:44px 5% 24px}
       <button class="gate-submit" id="gateSubmit" onclick="sendToWhatsApp()">
         🚀 Start Learning Free
         <script>
-function sendToWhatsApp() {
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-
-  let message = `Name: ${name}%0APhone: ${phone}`;
-
-  window.open(`https://wa.me/919024233390?text=${message}`, "_blank");
+          function sendToWhatsApp() {
+          let name = document.getElementById("name").value;
+          let phone = document.getElementById("phone").value;
+         let message = `Name: ${name}%0APhone: ${phone}`;
+         window.open(`https://wa.me/919024233390?text=${message}`, "_blank");
 }
 </script>
       </button>
