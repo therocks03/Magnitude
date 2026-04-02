@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Free PYQs - JEE & NEET Previous Year Papers | Magnitude Academy</title>
+  <meta name="description" content="Download free JEE and NEET previous year question papers (PYQs). Get instant access to chapter-wise and full-length papers with solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --red:#C0392B;--red2:#E74C3C;--red-light:#FDECEC;
+  --green:#27AE60;--green-light:#E8F8EF;
+  --gold:#D4A017;--gold-light:#FFF8E7;
+  --dark:#1A0A0A;--text:#2C1A1A;--text2:#6B4F4F;
+  --bg:#FFFAF8;--bg2:#FFF5F5;--bg3:#F9F0F0;
+  --white:#FFFFFF;--border:#F0DADA;
+  --shadow:0 4px 24px rgba(192,57,43,0.08);
+  --shadow-lg:0 12px 40px rgba(192,57,43,0.14);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;font-size:15px}
+
+/* NAV - Same as index.html */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.98);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:1400px;margin:0 auto}
+.nav-logo{cursor:pointer;transition:opacity .2s}
+.nav-logo:hover{opacity:0.8}
+.nav-logo img{height:48px;width:auto;object-fit:contain}
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center;margin:0;padding:0}
+.nav-item{position:relative}
+.nav-item>a{color:var(--text);text-decoration:none;font-size:14px;font-weight:500;padding:10px 18px;display:inline-flex;align-items:center;gap:6px;border-radius:6px;transition:all .2s;cursor:pointer}
+.nav-item>a:hover{color:var(--red);background:var(--red-light)}
+.nav-item.active>a{color:var(--red);font-weight:600}
+.dropdown-arrow{font-size:9px;transition:transform .2s;margin-left:2px}
+.nav-item:hover .dropdown-arrow{transform:rotate(180deg)}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--white);border:1px solid var(--border);border-radius:12px;min-width:240px;padding:8px;margin-top:8px;box-shadow:0 8px 24px rgba(0,0,0,0.08);opacity:0;transform:translateY(-10px);transition:all .3s}
+.nav-item:hover .dropdown{display:block;opacity:1;transform:translateY(0)}
+.dropdown a{display:block;padding:10px 14px;color:var(--text2);text-decoration:none;font-size:13px;border-radius:8px;transition:all .2s;white-space:nowrap}
+.dropdown a:hover{background:var(--red-light);color:var(--red)}
+.dropdown-divider{height:1px;background:var(--border);margin:8px 0}
+.nav-right{display:flex;align-items:center;gap:20px;flex-shrink:0}
+.nav-phone{font-size:14px;color:var(--text);text-decoration:none;font-weight:500;display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-phone:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--red2);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);padding:20px 5%;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,0.08);max-height:calc(100vh - 64px);overflow-y:auto}
+.mobile-menu.open{display:block}
+.mobile-nav-group{margin-bottom:24px}
+.mobile-nav-group-title{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text2);font-weight:700;margin-bottom:12px;padding-left:4px}
+.mobile-menu a{color:var(--text2);text-decoration:none;font-size:14px;padding:8px 4px;display:block;transition:color .2s}
+.mobile-menu a:hover{color:var(--red)}
+.mobile-menu .nav-phone{margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+
+@media(max-width:768px){
+  .nav-links,.nav-phone{display:none}
+  .hamburger{display:flex}
+  .nav-inner{height:60px}
+  .nav-logo img{height:44px}
+}
+
+/* HERO SECTION */
+.download-hero{
+  padding:80px 5% 60px;
+  background:linear-gradient(135deg,#FFFAF8 0%,#FFF2F2 60%,#FFF8E7 100%);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.download-hero::before{
+  content:'';
+  position:absolute;
+  top:-100px;
+  right:-100px;
+  width:400px;
+  height:400px;
+  background:radial-gradient(circle,rgba(192,57,43,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+h1{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(32px,4vw,48px);
+  font-weight:800;
+  line-height:1.1;
+  margin-bottom:16px;
+  letter-spacing:-1px;
+  color:var(--dark);
+}
+h1 .hl-red{color:var(--red)}
+h1 .hl-green{color:var(--green)}
+.hero-sub{
+  color:var(--text2);
+  font-size:16px;
+  line-height:1.75;
+  margin:0 auto 32px;
+  max-width:600px;
+}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--green-light);
+  border:1px solid rgba(39,174,96,0.2);
+  border-radius:50px;
+  padding:6px 16px;
+  font-size:12px;
+  color:var(--green);
+  margin-bottom:20px;
+  letter-spacing:.4px;
+  font-weight:600;
+}
+
+/* FILTER SECTION */
+.filter-section{
+  padding:40px 5%;
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+}
+.filter-container{
+  max-width:1200px;
+  margin:0 auto;
+}
+.filter-tabs{
+  display:flex;
+  gap:12px;
+  margin-bottom:32px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.filter-tab{
+  padding:12px 28px;
+  border-radius:50px;
+  font-size:14px;
+  border:2px solid var(--border);
+  color:var(--text2);
+  cursor:pointer;
+  transition:all .25s;
+  background:var(--white);
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+}
+.filter-tab.active{
+  background:var(--red);
+  color:#fff;
+  border-color:var(--red);
+}
+.filter-tab:hover:not(.active){
+  border-color:rgba(192,57,43,0.4);
+  color:var(--red);
+  background:var(--red-light);
+}
+
+/* DOWNLOAD CARDS */
+.download-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:20px;
+  padding:40px 5%;
+  max-width:1400px;
+  margin:0 auto;
+}
+.download-card{
+  background:var(--white);
+  border:2px solid var(--border);
+  border-radius:16px;
+  padding:28px;
+  transition:all .3s;
+  position:relative;
+  overflow:hidden;
+  opacity:0;
+  animation:fadeIn .5s forwards;
+}
+@keyframes fadeIn{
+  to{opacity:1}
+}
+.download-card:hover{
+  border-color:rgba(192,57,43,0.35);
+  transform:translateY(-5px);
+  box-shadow:var(--shadow-lg);
+}
+.card-tag{
+  display:inline-block;
+  font-size:10px;
+  letter-spacing:.5px;
+  padding:4px 12px;
+  border-radius:50px;
+  margin-bottom:14px;
+  font-weight:700;
+  text-transform:uppercase;
+}
+.tag-jee{background:rgba(192,57,43,0.08);color:var(--red);border:1px solid rgba(192,57,43,0.2)}
+.tag-neet{background:var(--green-light);color:var(--green);border:1px solid rgba(39,174,96,0.25)}
+.card-title{
+  font-family:'Syne',sans-serif;
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:8px;
+  color:var(--dark);
+}
+.card-meta{
+  display:flex;
+  gap:16px;
+  margin-bottom:12px;
+  font-size:12px;
+  color:var(--text2);
+  flex-wrap:wrap;
+}
+.card-meta span{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+.card-desc{
+  font-size:13px;
+  color:var(--text2);
+  line-height:1.65;
+  margin-bottom:18px;
+}
+.download-btn{
+  width:100%;
+  background:var(--red);
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  padding:12px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:all .25s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.download-btn:hover{
+  background:var(--red2);
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(192,57,43,0.3);
+}
+.download-btn:disabled{
+  background:#ccc;
+  cursor:not-allowed;
+  transform:none;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.6);
+  z-index:1000;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(4px);
+}
+.modal.active{
+  display:flex;
+}
+.modal-content{
+  background:var(--white);
+  border-radius:20px;
+  padding:40px;
+  max-width:500px;
+  width:100%;
+  position:relative;
+  animation:modalSlide .3s ease;
+  box-shadow:0 20px 60px rgba(0,0,0,0.3);
+}
+@keyframes modalSlide{
+  from{opacity:0;transform:translateY(-30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.modal-close{
+  position:absolute;
+  top:16px;
+  right:16px;
+  width:32px;
+  height:32px;
+  border:none;
+  background:var(--red-light);
+  color:var(--red);
+  border-radius:50%;
+  font-size:20px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:all .2s;
+}
+.modal-close:hover{
+  background:var(--red);
+  color:#fff;
+  transform:rotate(90deg);
+}
+.modal-title{
+  font-family:'Syne',sans-serif;
+  font-size:22px;
+  font-weight:800;
+  color:var(--dark);
+  margin-bottom:8px;
+}
+.modal-sub{
+  font-size:13px;
+  color:var(--text2);
+  margin-bottom:24px;
+}
+.form-group{
+  margin-bottom:16px;
+}
+.form-group label{
+  font-size:12px;
+  color:var(--text2);
+  display:block;
+  margin-bottom:6px;
+  letter-spacing:.4px;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.form-group input,.form-group select{
+  width:100%;
+  background:var(--bg);
+  border:2px solid var(--border);
+  border-radius:10px;
+  padding:12px 14px;
+  color:var(--text);
+  font-size:14px;
+  font-family:'DM Sans',sans-serif;
+  outline:none;
+  transition:all .2s;
+}
+.form-group input:focus,.form-group select:focus{
+  border-color:var(--red);
+  background:var(--white);
+  box-shadow:0 0 0 3px rgba(192,57,43,0.08);
+}
+.submit-modal-btn{
+  width:100%;
+  background:linear-gradient(135deg,var(--red),#A93226);
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  padding:14px;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:all .25s;
+  margin-top:8px;
+}
+.submit-modal-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px rgba(192,57,43,0.35);
+}
+
+/* FOOTER */
+footer{background:var(--dark);color:#F0E8E8;padding:52px 5% 30px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:36px}
+.footer-logo-wrap{margin-bottom:14px}
+.footer-logo-wrap img{height:56px;object-fit:contain;filter:brightness(1.1)}
+.footer-brand p{font-size:13px;color:#B09090;line-height:1.7;margin-bottom:18px;max-width:270px}
+.footer-contact{font-size:13px;color:#B09090;line-height:2.2}
+.footer-contact a{color:#F4A4A4;text-decoration:none;transition:color .2s}
+.footer-contact a:hover{color:#fff}
+.footer-col h5{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px;color:#F0E8E8}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:10px}
+.footer-col a{color:#B09090;text-decoration:none;font-size:13px;transition:color .2s}
+.footer-col a:hover{color:#F4A4A4}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.footer-bottom p{font-size:12px;color:#7A5A5A}
+.social-row{display:flex;gap:10px}
+.social-btn{width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:13px;text-decoration:none;transition:all .2s;color:#B09090}
+.social-btn:hover{background:rgba(192,57,43,0.2);border-color:rgba(192,57,43,0.4);color:#F4A4A4;transform:translateY(-2px)}
+
+@media(max-width:920px){
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .download-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .footer-grid{grid-template-columns:1fr}
+  .modal-content{padding:28px 24px}
+  .filter-tabs{gap:8px}
+  .filter-tab{padding:10px 20px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="footer-logo-wrap"><img src="logo.png" alt="Magnitude Eduventures" style="height:60px;object-fit:contain"></div>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item">
+        <a href="#">Programs <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="online-school.html">🏫 Online School</a>
+          <a href="courses.html">📚 Magnitude Global Curriculum Prep</a>
+          <a href="test-series.html">📝 Test Series</a>
+          <a href="sip.html">🏢 School Integrated Program</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#">Services <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="vidya-ai.html">🤖 Vidya AI Tutor</a>
+          <a href="one-to-one.html">👨‍🏫 One-to-One Tuition</a>
+          <a href="mentorship.html">🎯 Mentorship Program</a>
+          <a href="counselling.html">🎓 MBBS/IIT/NIT College Counselling</a>
+          <div class="dropdown-divider"></div>
+          <a href="book-session.html">📅 Book a Doubt/Backlog Session</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a href="download.html">Downloads</a>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+919024233390" class="nav-phone">📞 +91-90242-33390</a>
+      <a href="login.html" class="nav-cta">Login / Sign-Up</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-nav-group">
+    <a href="index.html">🏠 Home</a>
+    <a href="download.html">📥 Downloads</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">Programs</div>
+    <a href="online-school.html">🏫 Online School</a>
+    <a href="courses.html">📚 Magnitude Global Curriculum Prep</a>
+    <a href="test-series.html">📝 Test Series</a>
+    <a href="sip.html">🏢 School Integrated Program</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">Services</div>
+    <a href="vidya-ai.html">🤖 Vidya AI Tutor</a>
+    <a href="one-to-one.html">👨‍🏫 One-to-One Tuition</a>
+    <a href="mentorship.html">🎯 Mentorship Program</a>
+    <a href="counselling.html">🎓 MBBS/IIT/NIT College Counselling</a>
+    <a href="book-session.html">📅 Book a Doubt/Backlog Session</a>
+  </div>
+  <a href="tel:+919024233390" class="nav-phone">📞 +91-90242-33390</a>
+</div>
+
+<!-- HERO -->
+<section class="download-hero">
+  <div class="hero-badge">📚 100% Free • No Hidden Charges</div>
+  <h1>Download <span class="hl-red">JEE</span> & <span class="hl-green">NEET</span> PYQs</h1>
+  <p class="hero-sub">Access previous year question papers with detailed solutions. Chapter-wise and full-length papers for JEE Main, JEE Advanced, and NEET-UG.</p>
+</section>
+
+<!-- FILTER -->
+<section class="filter-section">
+  <div class="filter-container">
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterPapers('all')">All Papers</button>
+      <button class="filter-tab" onclick="filterPapers('jee-main')">JEE Main</button>
+      <button class="filter-tab" onclick="filterPapers('jee-advanced')">JEE Advanced</button>
+      <button class="filter-tab" onclick="filterPapers('neet')">NEET</button>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD CARDS -->
+<section class="download-grid" id="downloadGrid">
+  <!-- Cards will be dynamically generated here -->
+</section>
+
+<!-- DOWNLOAD MODAL -->
+<div id="downloadModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">×</button>
+    <div class="modal-title">📥 Get Instant Access</div>
+    <p class="modal-sub">Enter your details to download the study material</p>
+    <form id="downloadForm" onsubmit="handleDownload(event)">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" id="modal-name" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+        <label>WhatsApp Number *</label>
+        <input type="tel" id="modal-phone" placeholder="+91 XXXXX XXXXX" required pattern="[0-9]{10,12}">
+      </div>
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="modal-email" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label>Current Class *</label>
+        <select id="modal-class" required>
+          <option value="">Select your class</option>
+          <option>Class 11</option>
+          <option>Class 12</option>
+          <option>Dropper / Repeater</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-modal-btn">📥 Download Now</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo-wrap"><img src="logo.png" alt="Magnitude Eduventures" style="height:60px;object-fit:contain"></div>
+      <p>India's first flexible coaching platform by top IITian educators. Learn from home, choose your teachers, crack your dream exam.</p>
+      <div class="footer-contact">
+        📞 India: <a href="tel:+919024233390">+91-90242-33390</a><br>
+        📞 UAE: <a href="tel:+971557525439">+971-55-752-5439</a><br>
+        ✉️ <a href="mailto:info@magnitudeedu.com">info@magnitudeedu.com</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Programs</h5>
+      <ul>
+        <li><a href="online-school.html">IIT-JEE Live Classes</a></li>
+        <li><a href="online-school.html">NEET Preparation</a></li>
+        <li><a href="test-series.html">Test Series</a></li>
+        <li><a href="one-to-one.html">1-on-1 Tuitions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="download.html">Free Downloads</a></li>
+        <li><a href="team.html">Our Faculty</a></li>
+        <li><a href="results.html">Success Stories</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2018-2026 Magnitude Eduventures. All rights reserved.</p>
+    <div class="social-row">
+      <a href="https://www.youtube.com/channel/UCHcug0HZ4h6jkNODJgRMeyw" class="social-btn" target="_blank">▶</a>
+      <a href="https://www.linkedin.com/company/radicals-iit-jee" class="social-btn" target="_blank">in</a>
+      <a href="https://www.facebook.com/MagnitudeEduventures" class="social-btn" target="_blank">f</a>
+      <a href="https://twitter.com/Magnitude_APP" class="social-btn" target="_blank">𝕏</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+// PAPERS DATA - Replace Google Drive links with your actual links
+const papers = [
+  {
+    id: 1,
+    category: 'jee-main',
+    title: 'JEE Main 2024 - January Attempt',
+    year: '2024',
+    subject: 'Physics, Chemistry, Maths',
+    pages: '40',
+    description: 'Complete question paper with detailed solutions for all shifts',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE' // Replace this
+  },
+  {
+    id: 2,
+    category: 'jee-main',
+    title: 'JEE Main 2023 - Complete PYQ',
+    year: '2023',
+    subject: 'Physics, Chemistry, Maths',
+    pages: '120',
+    description: 'All shifts combined with chapter-wise solutions',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE'
+  },
+  {
+    id: 3,
+    category: 'jee-advanced',
+    title: 'JEE Advanced 2024 - Paper 1 & 2',
+    year: '2024',
+    subject: 'Physics, Chemistry, Maths',
+    pages: '60',
+    description: 'Both papers with step-by-step solutions',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE'
+  },
+  {
+    id: 4,
+    category: 'jee-advanced',
+    title: 'JEE Advanced 2023 - Paper 1 & 2',
+    year: '2023',
+    subject: 'Physics, Chemistry, Maths',
+    pages: '58',
+    description: 'Complete solution guide with tips & tricks',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE'
+  },
+  {
+    id: 5,
+    category: 'neet',
+    title: 'NEET 2024 - Complete Paper',
+    year: '2024',
+    subject: 'Physics, Chemistry, Biology',
+    pages: '45',
+    description: 'Official question paper with detailed biology solutions',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE'
+  },
+  {
+    id: 6,
+    category: 'neet',
+    title: 'NEET 2023 - Complete Paper',
+    year: '2023',
+    subject: 'Physics, Chemistry, Biology',
+    pages: '44',
+    description: 'All questions with NCERT-based explanations',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE'
+  },
+  {
+    id: 7,
+    category: 'jee-main',
+    title: 'JEE Main Physics Chapter-wise',
+    year: '2020-2024',
+    subject: 'Physics',
+    pages: '200',
+    description: '5 years of JEE Main Physics sorted by chapters',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE'
+  },
+  {
+    id: 8,
+    category: 'neet',
+    title: 'NEET Biology Chapter-wise',
+    year: '2019-2024',
+    subject: 'Biology',
+    pages: '180',
+    description: 'Botany + Zoology chapter-wise compilation',
+    driveLink: 'YOUR_GOOGLE_DRIVE_LINK_HERE'
+  }
+];
+
+let currentPaper = null;
+
+// Render papers
+function renderPapers(filter = 'all') {
+  const grid = document.getElementById('downloadGrid');
+  grid.innerHTML = '';
+  
+  const filtered = filter === 'all' ? papers : papers.filter(p => p.category === filter);
+  
+  filtered.forEach((paper, index) => {
+    const card = document.createElement('div');
+    card.className = 'download-card';
+    card.style.animationDelay = `${index * 0.1}s`;
+    
+    const tagClass = paper.category.includes('neet') ? 'tag-neet' : 'tag-jee';
+    const tagText = paper.category.replace('-', ' ').toUpperCase();
+    
+    card.innerHTML = `
+      <span class="card-tag ${tagClass}">${tagText}</span>
+      <div class="card-title">${paper.title}</div>
+      <div class="card-meta">
+        <span>📅 ${paper.year}</span>
+        <span>📄 ${paper.pages} Pages</span>
+      </div>
+      <div class="card-desc">${paper.description}</div>
+      <button class="download-btn" onclick="openModal(${paper.id})">
+        📥 Download PDF
+      </button>
+    `;
+    
+    grid.appendChild(card);
+  });
+}
+
+// Filter papers
+function filterPapers(category) {
+  document.querySelectorAll('.filter-tab').forEach(tab => tab.classList.remove('active'));
+  event.target.classList.add('active');
+  renderPapers(category);
+}
+
+// Open modal
+function openModal(paperId) {
+  currentPaper = papers.find(p => p.id === paperId);
+  document.getElementById('downloadModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+// Close modal
+function closeModal() {
+  document.getElementById('downloadModal').classList.remove('active');
+  document.body.style.overflow = 'auto';
+  document.getElementById('downloadForm').reset();
+}
+
+// Handle download
+function handleDownload(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('modal-name').value;
+  const phone = document.getElementById('modal-phone').value;
+  const email = document.getElementById('modal-email').value;
+  const cls = document.getElementById('modal-class').value;
+  
+  // Send data to WhatsApp (optional)
+  const msg = `📥 *New Download Request*\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n✉️ Email: ${email}\n📚 Class: ${cls}\n📄 Paper: ${currentPaper.title}\n\n_From Magnitude Downloads_`;
+  const waUrl = `https://wa.me/919024233390?text=${encodeURIComponent(msg)}`;
+  
+  // Store user data in localStorage (optional - for analytics)
+  const userData = {
+    name, phone, email, class: cls, 
+    paper: currentPaper.title,
+    timestamp: new Date().toISOString()
+  };
+  const downloads = JSON.parse(localStorage.getItem('mg_downloads') || '[]');
+  downloads.push(userData);
+  localStorage.setItem('mg_downloads', JSON.stringify(downloads));
+  
+  // Open Google Drive link
+  window.open(currentPaper.driveLink, '_blank');
+  
+  // Optional: Open WhatsApp
+  // window.open(waUrl, '_blank');
+  
+  // Close modal and show success
+  closeModal();
+  alert('✅ Download started! Check your downloads folder.\n\nWe\'ve also sent the details to your WhatsApp.');
+}
+
+// Close modal on outside click
+document.getElementById('downloadModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+// Initialize
+renderPapers();
+</script>
+
+</body>
+</html>
