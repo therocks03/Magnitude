@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnitude Academy | Rank Predictor</title>
+    <meta name="description" content="Predict your college admissions based on your JEE, NEET, and other exam ranks with Magnitude Academy.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Abstract Background -->
+    <div class="bg-abstract">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="ph-fill ph-graduation-cap"></i>
+            <span>Magnitude Academy</span>
+        </div>
+        <div class="nav-links">
+            <a href="https://www.magnitudeacademy.com/">Home</a>
+            <a href="#" class="active">Predictor</a>
+            <a href="#">Counseling</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Welcome View -->
+        <section id="view-exam-selection" class="view active-view">
+            <div class="hero-text">
+                <span class="badge">🚀 Know your colleges instantly</span>
+                <h1>Stop guessing.<br>Secure your <span class="highlight">Dream College</span>.</h1>
+                <p>Enter your rank and instantly see every college you can get into. No more guessing, no more messy spreadsheets.</p>
+            </div>
+
+            <div class="exam-cards">
+                <!-- Card 1 -->
+                <div class="card exam-card" onclick="selectExam('JEE Mains')">
+                    <div class="card-icon blue-icon">
+                        <i class="ph ph-buildings"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>JEE Mains</h3>
+                        <p>Predict your chances for NITs, IIITs, & GFTIs based on JoSAA counselling.</p>
+                    </div>
+                    <i class="ph ph-arrow-right card-arrow"></i>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card exam-card" onclick="selectExam('JEE Advanced')">
+                    <div class="card-icon orange-icon">
+                        <i class="ph ph-atom"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>JEE Advanced</h3>
+                        <p>IIT branches you can secure with your Advanced rank.</p>
+                    </div>
+                    <i class="ph ph-arrow-right card-arrow"></i>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card exam-card" onclick="selectExam('NEET')">
+                    <div class="card-icon green-icon">
+                        <i class="ph ph-stethoscope"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>NEET UG</h3>
+                        <p>Find medical colleges for MBBS/BDS under AIQ and State quotas.</p>
+                    </div>
+                    <i class="ph ph-arrow-right card-arrow"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Predictor Form View -->
+        <section id="view-predictor-form" class="view hidden-view">
+            <button class="btn-back" onclick="goBack()">
+                <i class="ph ph-arrow-left"></i> Back to Exams
+            </button>
+            <div class="form-container card">
+                <div class="form-header">
+                    <h2 id="selected-exam-title">JEE Mains Predictor</h2>
+                    <p>Enter your details below to fetch college predictions</p>
+                </div>
+                <form id="prediction-form" onsubmit="handlePredictList(event)">
+                    <div class="input-group">
+                        <label for="rank">Enter Your Rank</label>
+                        <input type="number" id="rank" placeholder="e.g. 15000" required>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="OPEN">OPEN / General</option>
+                                <option value="OBC-NCL">OBC-NCL</option>
+                                <option value="EWS">GEN-EWS</option>
+                                <option value="SC">SC</option>
+                                <option value="ST">ST</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="state">Home State</label>
+                            <select id="state" required>
+                                <option value="" disabled selected>Select State</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="Gender-Neutral">Gender-Neutral</option>
+                            <option value="Female-Only">Female-Only</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="btn-predict">
+                        <span>Predict Colleges</span>
+                        <i class="ph ph-magic-wand"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results View -->
+        <section id="view-results" class="view hidden-view">
+            <button class="btn-back" onclick="resetForm()">
+                <i class="ph ph-arrow-left"></i> New Prediction
+            </button>
+            <div class="results-header">
+                <h2>Your Predicted Colleges</h2>
+                <p>Based on rank <strong id="display-rank"></strong> in <strong id="display-category"></strong> category.</p>
+            </div>
+            
+            <div id="loading-spinner" class="spinner-container">
+                <div class="spinner"></div>
+                <p>Ai is analyzing thousands of cutoffs...</p>
+            </div>
+
+            <div id="results-list" class="results-grid hidden">
+                <!-- Data injected via JS -->
+            </div>
+        </section>
+    </main>
+    <script src="josaa_data.js"></script>
+    <script src="neet_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
