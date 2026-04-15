@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnitude Academy | Rank Predictor</title>
+    <meta name="description" content="Predict your college admissions based on your JEE, NEET, and other exam ranks with Magnitude Academy.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Abstract Background -->
+    <div class="bg-abstract">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+    <a href="../index.html" class="nav-logo">
+      <div class="footer-logo-wrap"><img src="../logo.png" alt="Magnitude Eduventures" style="height:60px;object-fit:contain"></div>
+    </a>
+    <ul class="nav-links">
+      <li class="nav-item active"><a href="../index.html">Home</a></li>
+      <li class="nav-item">
+        <a href="#">Programs <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="../online-school.html">🏫 Online School</a>
+          <a href="../courses.html">📚 Magnitude Global Curriculum Prep</a>
+          <a href="../test-series.html">📝 Test Series</a>
+          <a href="../sip.html">🏢 School Integrated Program</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#">Services <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="../vidya-ai.html">🤖 Vidya AI Tutor</a>
+          <a href="../one-to-one.html">👨‍🏫 One-to-One Tuition</a>
+          <a href="../mentorship.html">🎯 Mentorship Program</a>
+          <a href="../counselling.html">🎓 MBBS/IIT/NIT College Counselling</a>
+          <div class="dropdown-divider"></div>
+          <a href="../book-session.html">📅 Book a Doubt/Backlog Session</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#">About <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="../team.html">👥 Meet Our Team</a>
+          <a href="../results.html">🏆 Success Stories</a>
+        </div>
+      </li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+919024233390" class="nav-phone">📞 +91-90242-33390</a>
+      <a href="../login.html" class="nav-cta">login / Sign-Up</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>
+
+<div id="mobileMenu" class="mobile-menu">
+  <div class="mobile-nav-group">
+    <a href="../index.html">🏠 Home</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">Programs</div>
+    <a href="../online-school.html">🏫 Online School</a>
+    <a href="../courses.html">📚 Magnitude Global Curriculum Prep</a>
+    <a href="../test-series.html">📝 Test Series</a>
+    <a href="../sip.html">🏢 School Integrated Program</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">Services</div>
+    <a href="../vidya-ai.html">🤖 Vidya AI Tutor</a>
+    <a href="../one-to-one.html">👨‍🏫 One-to-One Tuition</a>
+    <a href="../mentorship.html">🎯 Mentorship Program</a>
+    <a href="../counselling.html">🎓 MBBS/IIT/NIT College Counselling</a>
+    <a href="../book-session.html">📅 Book a Doubt/Backlog Session</a>
+  </div>
+  <div class="mobile-nav-group">
+    <div class="mobile-nav-group-title">About</div>
+    <a href="../team.html">👥 Meet Our Team</a>
+    <a href="../results.html">🏆 Success Stories</a>
+  </div>
+  <a href="tel:+919024233390" class="nav-phone">📞 +91-90242-33390</a>
+</div>
+
+    <!-- Main Container -->
+    <main class="container">
+        
+        <!-- Welcome View -->
+        <section id="view-exam-selection" class="view active-view">
+            <div class="hero-text">
+                <span class="badge">🚀 Know your colleges instantly</span>
+                <h1>Stop guessing.<br>Secure your <span class="highlight">Dream College</span>.</h1>
+                <p>Enter your rank and instantly see every college you can get into. No more guessing, no more messy spreadsheets.</p>
+            </div>
+
+            <div class="exam-cards">
+                <!-- Card 1 -->
+                <div class="card exam-card" onclick="selectExam('JEE Mains')">
+                    <div class="card-icon blue-icon">
+                        <i class="ph ph-buildings"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>JEE Mains</h3>
+                        <p>Predict your chances for NITs, IIITs, & GFTIs based on JoSAA counselling.</p>
+                    </div>
+                    <i class="ph ph-arrow-right card-arrow"></i>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card exam-card" onclick="selectExam('JEE Advanced')">
+                    <div class="card-icon orange-icon">
+                        <i class="ph ph-atom"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>JEE Advanced</h3>
+                        <p>IIT branches you can secure with your Advanced rank.</p>
+                    </div>
+                    <i class="ph ph-arrow-right card-arrow"></i>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card exam-card" onclick="selectExam('NEET')">
+                    <div class="card-icon green-icon">
+                        <i class="ph ph-stethoscope"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>NEET UG</h3>
+                        <p>Find medical colleges for MBBS/BDS under AIQ and State quotas.</p>
+                    </div>
+                    <i class="ph ph-arrow-right card-arrow"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Predictor Form View -->
+        <section id="view-predictor-form" class="view hidden-view">
+            <button class="btn-back" onclick="goBack()">
+                <i class="ph ph-arrow-left"></i> Back to Exams
+            </button>
+            <div class="form-container card">
+                <div class="form-header">
+                    <h2 id="selected-exam-title">JEE Mains Predictor</h2>
+                    <p>Enter your details below to fetch college predictions</p>
+                </div>
+                <form id="prediction-form" onsubmit="handlePredictList(event)">
+                    <div class="input-group">
+                        <label for="rank">Enter Your Rank</label>
+                        <input type="number" id="rank" placeholder="e.g. 15000" required>
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="OPEN">OPEN / General</option>
+                                <option value="OBC-NCL">OBC-NCL</option>
+                                <option value="EWS">GEN-EWS</option>
+                                <option value="SC">SC</option>
+                                <option value="ST">ST</option>
+                            </select>
+                        </div>
+                        <div class="input-group" id="state-group">
+                            <label for="state">Home State</label>
+                            <select id="state" required>
+                                <option value="" disabled selected>Select State</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Ladakh">Ladakh</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" required>
+                            <option value="Gender-Neutral">Gender-Neutral</option>
+                            <option value="Female-Only">Female-Only</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="btn-predict">
+                        <span>Predict Colleges</span>
+                        <i class="ph ph-magic-wand"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Results View -->
+        <section id="view-results" class="view hidden-view">
+            <div class="results-actions">
+                <button class="btn-back" onclick="resetForm()">
+                    <i class="ph ph-arrow-left"></i> New Prediction
+                </button>
+                <button class="btn-export hidden" id="btn-export-pdf" onclick="exportPDF()">
+                    <i class="ph ph-file-pdf"></i> Export PDF
+                </button>
+            </div>
+            <div class="results-header">
+                <h2>Your Predicted Colleges</h2>
+                <p>Based on rank <strong id="display-rank"></strong> in <strong id="display-category"></strong> category.</p>
+            </div>
+            
+            <div id="loading-spinner" class="spinner-container">
+                <div class="spinner"></div>
+                <p>Ai is analyzing thousands of cutoffs...</p>
+            </div>
+
+            <div id="results-list" class="results-grid hidden">
+                <!-- Data injected via JS -->
+            </div>
+        </section>
+    </main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+<a href="../index.html" class="nav-logo">
+      <div class="footer-logo-wrap"><img src="../logo.png" alt="Magnitude Eduventures" style="height:60px;object-fit:contain"></div>
+      <p>India's first flexible coaching platform by top IITian educators. Learn from home, choose your teachers, crack your dream exam.</p>
+      <div class="footer-contact">
+        📞 India: <a href="tel:+919024233390">+91-90242-33390</a><br>
+        📞 UAE: <a href="tel:+971557525439">+971-55-752-5439</a><br>
+        ✉️ <a href="/cdn-cgi/l/email-protection#01646f70746873782f6c60666f687574656441666c60686d2f626e6c"><span class="__cf_email__" data-cfemail="27424956524e555e094a4640494e5352434267404a464e4b0944484a">[email&#160;protected]</span></a>
+      </div>
+      <a href="https://play.google.com/store/apps/details?id=com.ingenium.tca2088" class="play-btn" target="_blank"><span>▶</span> Download on Google Play</a>
+    </div>
+    <div class="footer-col">
+      <h5>Programs</h5>
+      <ul>
+        <li><a href="../online-school">IIT-JEE Live Classes</a></li>
+        <li><a href="../online-school">NEET Preparation</a></li>
+        <li><a href="../test-series.html">Test Series</a></li>
+        <li><a href="../one-to-one.html">1-on-1 Tuitions</a></li>
+        <li><a href="../mentorship.html">Mentorship Plan</a></li>
+        <li><a href="../sip.html">School Integrated Program</a></li>
+        <li><a href="../vidya-ai.html">Vidya AI Tutor</a></li>
+        <li><a href="../Counselling.html">College Counselling</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="../online-school.html">About Magnitude</a></li>
+        <li><a href="../online-school.html">Our IITian Faculty</a></li>
+        <li><a href="../download.html" target="_blank">Download JEE/NEET PYQ</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeGVqTJA3n4y8UN6VnqhA2yabyAD28gQwfQD7D9G4laqNTDwA/viewform" target="_blank">Apply for MSAT</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSewnaMWxhK5Jt1h95OQk6_E7uMzkeEe63BGHFrSlZS3aR3kZg/viewform" target="_blank">Become an Educator</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">Terms & Conditions</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blogs</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2018-2026 Magnitude Eduventures. All rights reserved.</p>
+    <div class="social-row">
+      <a href="https://www.youtube.com/channel/UCHcug0HZ4h6jkNODJgRMeyw" class="social-btn" target="_blank">▶</a>
+      <a href="https://www.linkedin.com/company/radicals-iit-jee" class="social-btn" target="_blank">in</a>
+      <a href="https://www.facebook.com/MagnitudeEduventures" class="social-btn" target="_blank">f</a>
+      <a href="https://twitter.com/Magnitude_APP" class="social-btn" target="_blank">𝕏</a>
+      <a href="https://in.pinterest.com/MagnitudeEduventures/" class="social-btn" target="_blank">P</a>
+    </div>
+  </div>
+</footer>
+    <script src="josaa_data.js"></script>
+    <script src="neet_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
