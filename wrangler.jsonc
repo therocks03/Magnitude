@@ -5,19 +5,16 @@
   "observability": {
     "enabled": true
   },
-  "kv_namespaces": [
-    {
-      "binding": "KV",
-      "id": "62930417f7a145c78c709bbda15fa19d",
-      
-      // Optional: preview_id used when running `wrangler dev` for local dev
-      "preview_id": "<ID_OF_PREVIEW_KV_NAMESPACE_FOR_LOCAL_DEVELOPMENT>"
-    }
-  ]
   "assets": {
     "directory": "."
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "BLOG_KV",
+      "id": "62930417f7a145c78c709bbda15fa19d"
+    }
   ]
 }
