@@ -44,6 +44,21 @@ const SEED_POSTS = [
     "readTime": 6,
     "featured": true
   }
+    {
+    "id": "vidya-ai-tutor-launch",
+    "title": "Introducing Vidya AI Tutor: Your 24/7 Doubt-Solving Companion",
+    "excerpt": "We built India's first AI tutor specifically designed for JEE & NEET students. Ask doubts anytime — even at 2 AM.",
+    "content": "## Meet Vidya — Your AI Study Partner\n\nImagine having an IITian available **24 hours a day** to answer any question and generate practice problems on demand. That's Vidya.\n\n---\n\n## How Vidya Works\n\n1. **Ask Your Doubt**: Type or photograph your question.\n2. **Get Instant Explanation**: Vidya provides step-by-step solutions.\n3. **Practice More**: Get 3 similar problems to test your understanding.\n\n---\n\n## Available at 2 AM\nOur data shows that 23% of student doubts come between 11 PM and 3 AM. Vidya never sleeps. Every Magnitude student gets **unlimited access**.",
+    "author": "Magnitude Tech",
+    "authorRole": "Engineering Team",
+    "category": "Product Updates",
+    "coverImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070",
+    "coverColor": "linear-gradient(135deg, #2980B9 0%, #3498DB 50%, #1ABC9C 100%)",
+    "date": "2026-03-28",
+    "readTime": 4,
+    "featured": false
+  }
+
 ];
 
 function getBlogPosts() {
