@@ -43,7 +43,7 @@ const SEED_POSTS = [
     "date": "2026-04-15",
     "readTime": 6,
     "featured": true
-  }
+  },
     {
     "id": "vidya-ai-tutor-launch",
     "title": "Introducing Vidya AI Tutor: Your 24/7 Doubt-Solving Companion",
