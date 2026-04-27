@@ -148,7 +148,7 @@ No recorded lectures. Our classes are **truly interactive** — voice, video, an
 Don't vibe with your teacher? Switch. This freedom doesn't exist offline.
 
 **Experience the difference →** [Book a Free Demo Class](https://wa.me/919024233390?text=I%20want%20to%20Book%20a%20Free%20demo)`,
-    author: 'Kedar Agarwal',
+    author: 'Kedar Kholiya',
     authorRole: 'Founder, Magnitude Academy',
     category: 'Education Insights',
     coverImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2070',
