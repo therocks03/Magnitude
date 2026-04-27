@@ -3,3 +3,8 @@ User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
 Sitemap: https://www.magnitudeacademy.com/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: https://www.magnitudeacademy.com/sitemap.xml
+
