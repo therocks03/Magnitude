@@ -67,7 +67,7 @@ After solving your doubt, Vidya generates **3 similar problems** so you can prac
 ---
 
 ## Try Vidya Free
-Every Magnitude student gets **unlimited access** to Vidya AI Tutor. [Try a free demo →](/vidya-ai.html)`,
+Every Magnitude student gets **unlimited access** to Vidya AI Tutor. [Try a free demo →](www.magnitudeacademyc.com/vidya-ai.html)`,
     author: 'Magnitude Tech Team',
     authorRole: 'Product & Engineering',
     category: 'Product Updates',
