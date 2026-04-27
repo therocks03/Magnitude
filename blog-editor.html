@@ -108,6 +108,7 @@
         <button type="button" onclick="insertMedia('image')" style="padding:6px 12px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-size:12px;">🖼️ Add Image</button>
         <button type="button" onclick="insertMedia('youtube')" style="padding:6px 12px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-size:12px;">▶️ Add YouTube</button>
         <button type="button" onclick="insertMedia('pdf')" style="padding:6px 12px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-size:12px;">📄 Add PDF</button>
+        <button type="button" onclick="insertMedia('link')" style="padding:6px 12px; border-radius:6px; border:1px solid var(--border); background:#fff; cursor:pointer; font-size:12px;">🔗 Add Link</button>
       </div>
       <textarea id="post-content" oninput="updatePreview()"></textarea>
     </div>
@@ -136,7 +137,8 @@
     document.getElementById('p-body').innerHTML = md
       .replace(/\n\n/g, '</p><p>')
       .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-      .replace(/\!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" style="width:100%; border-radius:8px; margin:10px 0;">');
+      .replace(/\!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" style="width:100%; border-radius:8px; margin:10px 0;">')
+      .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank" style="color:var(--red); text-decoration:underline;">$1</a>');
   }
 
   function insertMedia(type) {
@@ -145,6 +147,7 @@
     if (type === 'image') tag = '![Image Description](https://example.com/image.jpg)';
     if (type === 'youtube') tag = '[youtube](VIDEO_ID_HERE)';
     if (type === 'pdf') tag = '[pdf](https://example.com/document.pdf)';
+    if (type === 'link') tag = '[Link Text](https://example.com)';
     
     const start = area.selectionStart;
     const end = area.selectionEnd;
