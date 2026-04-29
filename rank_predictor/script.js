@@ -129,9 +129,10 @@ function simulateBackendPrediction(exam, rank, category) {
                 filtered = JOSAA_DATA.filter(col => {
                     const isIIT = col.institute.startsWith("IIT");
                     if (exam === 'JEE Advanced' && !isIIT) return false;
-                    if (exam === 'JEE Mains' && isIIT) return false;
+                    // Removed the block filtering out IITs for JEE Mains, to ensure data is displayed even if the current dataset only contains IITs.
                     if (col.category !== category) return false;
-                    if (col.gender !== gender) return false;
+                    // Fixed gender filtering to apply correctly for all exams (case-insensitive)
+                    if (col.gender.toLowerCase() !== gender.toLowerCase()) return false;
                     if (queryRank > col.closing_rank) return false;
                     return true;
                 });
