@@ -694,12 +694,6 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.98);backdrop
   nav{padding:0 4%}
   .mobile-menu{padding:20px 4%}
 }
-  /* FLOATING WA */
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:999;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,0.4);transition:all .25s;animation:waBounce 2s ease-in-out infinite}
-.wa-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,0.5)}
-@keyframes waBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.wa-tooltip{position:fixed;bottom:88px;right:24px;z-index:999;background:var(--dark);color:#fff;font-size:12px;padding:7px 14px;border-radius:8px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s}
-.wa-float:hover~.wa-tooltip{opacity:1}
 
 /* Dropdown Menu - Enhanced with better spacing */
 .dropdown{
@@ -982,8 +976,8 @@ h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:80
 .btn-white{background:#fff;color:var(--red);padding:13px 28px;border-radius:9px;text-decoration:none;font-weight:700;font-size:14px;transition:.25s;display:inline-flex;align-items:center;gap:8px}
 .btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,0.2)}
 
-/*  */
-{background:#1A0A0A;color:#F0E8E8;padding:48px 5% 24px}
+/* FOOTER */
+footer{background:#1A0A0A;color:#F0E8E8;padding:48px 5% 24px}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:32px;max-width:1200px;margin-left:auto;margin-right:auto}
 .foot-grid h5{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:16px;color:#fff}
 .foot-grid p{font-size:13px;line-height:1.7;margin-bottom:14px;color:#C9AFAF}
@@ -995,6 +989,12 @@ h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:80
 .soc{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:14px;text-decoration:none;color:#B09090;transition:all .2s}
 .soc:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);color:#fff}
 
+  /* FLOATING WA */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:999;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,0.4);transition:all .25s;animation:waBounce 2s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,0.5)}
+@keyframes waBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.wa-tooltip{position:fixed;bottom:88px;right:24px;z-index:999;background:var(--dark);color:#fff;font-size:12px;padding:7px 14px;border-radius:8px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s}
+.wa-float:hover~.wa-tooltip{opacity:1}
 
 /* RESPONSIVE */
 @media(max-width:1000px){
@@ -1267,7 +1267,7 @@ h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:80
   <div class="foot-grid">
     <div>
      <a href="index.html" class="nav-logo">
-      <div class="-logo-wrap"><img src="logo.png" alt="Magnitude Eduventures" style="height:60px;object-fit:contain"></div>
+      <div class="footer-logo-wrap"><img src="logo.png" alt="Magnitude Eduventures" style="height:60px;object-fit:contain"></div>
       <p>India's first flexible coaching platform by top IITian educators. Learn from home, choose your teachers, crack your dream exam.</p>
       <p style="margin-top:16px">
         📞 India: <a href="tel:+919024233390" style="color:#E8C7C7">+91-90242-33390</a><br>
@@ -1309,12 +1309,10 @@ h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:80
     </div>
   </div>
 </footer>
-
-  <!-- FLOATING WHATSAPP -->
+  
+<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/919024233390" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
 <div class="wa-tooltip">Chat with us on WhatsApp</div>
-
-
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
