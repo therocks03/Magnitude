@@ -619,6 +619,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.98);backdrop
   box-shadow:0 4px 12px rgba(192,57,43,0.3);
 }
 
+  /* FLOATING WA */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:999;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,0.4);transition:all .25s;animation:waBounce 2s ease-in-out infinite}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 10px 32px rgba(37,211,102,0.5)}
+@keyframes waBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.wa-tooltip{position:fixed;bottom:88px;right:24px;z-index:999;background:var(--dark);color:#fff;font-size:12px;padding:7px 14px;border-radius:8px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s}
+.wa-float:hover~.wa-tooltip{opacity:1}
+
+  
 /* Mobile Menu */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
 .hamburger span{width:24px;height:2.5px;background:var(--text);border-radius:2px;transition:.3s}
@@ -1320,6 +1328,12 @@ window.addEventListener('DOMContentLoaded',()=>{
       <a href="https://twitter.com/Magnitude_APP" class="soc" target="_blank">𝕏</a>
       <a href="https://www.linkedin.com/company/radicals-iit-jee" class="soc" target="_blank">in</a>
 <a href="https://wa.me/919024233390" class="wa" target="_blank">💬</a>
+    </div></div></footer>
+
+  <!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919024233390" class="wa-float" target="_blank" title="Chat on WhatsApp">💬</a>
+<div class="wa-tooltip">Chat with us on WhatsApp</div>
+
 <script>
 function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
 </script>
