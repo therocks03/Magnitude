@@ -1112,483 +1112,46 @@ footer{background:var(--dark);color:#F0E8E8;padding:52px 5% 30px}
   .form-row{grid-template-columns:1fr}
 }
 
-/* TOP ANNOUNCEMENT BAR */
-.top-bar {
-  background: var(--red);
-  color: #fff;
-  text-align: center;
-  padding: 10px 5%;
-  font-size: 13.5px;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  z-index: 101;
-  position: relative;
-}
-.top-bar strong {
-  font-family: 'Syne', sans-serif;
-  letter-spacing: 0.5px;
-  color: var(--gold-light);
-}
-.top-bar a.btn-top {
-  background: var(--gold);
-  color: var(--dark);
-  text-decoration: none;
-  padding: 4px 14px;
-  border-radius: 50px;
-  font-size: 12px;
-  font-weight: 700;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-.top-bar a.btn-top:hover {
-  background: #FFF;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-:root {
-  --red:#C0392B; --red2:#E74C3C; --red-light:#FDECEC;
-  --green:#27AE60; --green-light:#E8F8EF;
-  --gold:#D4A017; --gold-light:#FFF8E7;
-  --dark:#1A0A0A; --text:#2C1A1A; --text2:#6B4F4F;
-  --bg:#FFFAF8; --border:#F0DADA; --white:#FFFFFF;
-}
-body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; padding: 40px 0; }
-
-/* ── SECTION WRAPPER ────────────────────────── */
+/* ── POSTER GALLERY ─────────────────────────── */
 .pg-section {
-  padding: 72px 0;
+  padding: 60px 5%;
   background: linear-gradient(160deg, #FFFAF8 0%, #FFF5F5 60%, #F5FFF8 100%);
   position: relative;
-  overflow: hidden;
-}
-.pg-section::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 360px; height: 360px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(192,57,43,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.pg-inner { max-width: 100%; margin: 0; padding: 0 5%; }
-
-/* ── HEADER ─────────────────────────────────── */
-.pg-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 36px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.pg-tag {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--red);
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-.pg-tag::before { content: ''; width: 20px; height: 2px; background: var(--red); border-radius: 2px; }
-.pg-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -.5px;
-  line-height: 1.1;
-}
-.pg-title span { color: var(--red); }
-
-/* Controls */
-.pg-controls { display: flex; align-items: center; gap: 10px; }
-.pg-nav-btn {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  color: var(--text);
-  font-size: 16px;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all .2s;
-}
-.pg-nav-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-light); transform: scale(1.08); }
-.pg-pause-btn {
-  padding: 8px 16px;
-  border-radius: 50px;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text2);
-  cursor: pointer;
-  transition: all .2s;
-}
-.pg-pause-btn:hover, .pg-pause-btn.paused { border-color: var(--red); color: var(--red); background: var(--red-light); }
-
-/* ── STAGE ───────────────────────────────────── */
-.pg-stage {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  align-items: start;
-}
-
-/* Featured poster */
-.pg-featured {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  max-width: 600px;
-  margin: 0 auto;
-  background: var(--dark);
-  box-shadow: 0 16px 48px rgba(192,57,43,0.18);
-  cursor: pointer;
-  display: block;
-}
-.pg-featured-img {
-  position: absolute;
-  inset: 0; width: 100%; height: 100%;
-  object-fit: contain;
-  opacity: 0;
-  transition: opacity .65s cubic-bezier(0.4, 0, 0.2, 1);
-  background: #1A0A0A;
-}
-.pg-featured-img.active { opacity: 1; }
-
-.pg-featured-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(0deg, rgba(26,10,10,0.88) 0%, rgba(26,10,10,0.4) 60%, transparent 100%);
-  padding: 28px 24px 22px;
-  z-index: 3;
-}
-.pg-caption-tag {
-  display: inline-block;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 1.2px; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 50px;
-  margin-bottom: 8px;
-}
-.pg-caption-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(15px, 2vw, 20px);
-  font-weight: 800; color: #fff;
-  line-height: 1.2; margin-bottom: 6px;
-}
-.pg-caption-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
-
-/* Progress bar */
-.pg-progress-bar {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 3px; background: rgba(255,255,255,0.15); z-index: 4;
-}
-.pg-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--gold), var(--red));
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: none;
-}
-.pg-progress-fill.animating {
-  transition: width var(--dur, 4500ms) linear;
-}
-
-/* Expand icon */
-.pg-expand-icon {
-  position: absolute; top: 14px; right: 14px;
-  width: 32px; height: 32px; border-radius: 8px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; color: rgba(255,255,255,0.8);
-  opacity: 0; transition: opacity .2s;
-  z-index: 4; cursor: pointer;
-}
-.pg-featured:hover .pg-expand-icon { opacity: 1; }
-  
-<style>
-:root {
-  --red:#C0392B; --red2:#E74C3C; --red-light:#FDECEC;
-  --green:#27AE60; --green-light:#E8F8EF;
-  --gold:#D4A017; --gold-light:#FFF8E7;
-  --dark:#1A0A0A; --text:#2C1A1A; --text2:#6B4F4F;
-  --bg:#FFFAF8; --border:#F0DADA; --white:#FFFFFF;
-}
-body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; padding: 40px 0; }
-
-/* ── SECTION WRAPPER ────────────────────────── */
-.pg-section {
-  padding: 72px 5%;
-  background: linear-gradient(160deg, #FFFAF8 0%, #FFF5F5 60%, #F5FFF8 100%);
-  position: relative;
-  overflow: hidden;
-}
-.pg-section::before {
-  content: '';
-  position: absolute;
-  top: -80px; right: -80px;
-  width: 360px; height: 360px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(192,57,43,0.06) 0%, transparent 70%);
-  pointer-events: none;
 }
 .pg-inner { max-width: 1300px; margin: 0 auto; }
-
-/* ── HEADER ─────────────────────────────────── */
-.pg-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 36px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.pg-tag {
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: var(--red);
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
+.pg-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; flex-wrap: wrap; gap: 16px; }
+.pg-tag { font-size: 11px; letter-spacing: 2px; color: var(--red); text-transform: uppercase; font-weight: 700; display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
 .pg-tag::before { content: ''; width: 20px; height: 2px; background: var(--red); border-radius: 2px; }
-.pg-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(24px, 3vw, 36px);
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -.5px;
-  line-height: 1.1;
-}
+.pg-title { font-family: 'Syne', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 800; color: var(--dark); letter-spacing: -.5px; line-height: 1.1; }
 .pg-title span { color: var(--red); }
-
-/* Controls */
 .pg-controls { display: flex; align-items: center; gap: 10px; }
-.pg-nav-btn {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  color: var(--text);
-  font-size: 16px;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all .2s;
-}
-.pg-nav-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-light); transform: scale(1.08); }
-.pg-pause-btn {
-  padding: 8px 16px;
-  border-radius: 50px;
-  border: 1.5px solid var(--border);
-  background: var(--white);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text2);
-  cursor: pointer;
-  transition: all .2s;
-}
+.pg-nav-btn { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--border); background: var(--white); color: var(--text); font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .2s; line-height: 1; }
+.pg-nav-btn:hover { border-color: var(--red); color: var(--red); background: var(--red-light); }
+.pg-pause-btn { padding: 8px 18px; border-radius: 50px; border: 1.5px solid var(--border); background: var(--white); font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; color: var(--text2); cursor: pointer; transition: all .2s; }
 .pg-pause-btn:hover, .pg-pause-btn.paused { border-color: var(--red); color: var(--red); background: var(--red-light); }
-
-/* ── STAGE ───────────────────────────────────── */
-.pg-stage {
-  display: flex;
-justify-content: center;
-  width: 100%;
-}
-
-/* Featured poster */
-.pg-featured {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  aspect-ratio: 4/3;
-  background: var(--dark);
-  box-shadow: 0 16px 48px rgba(192,57,43,0.18);
-  cursor: pointer;
-}
-.pg-featured-img {
-  position: absolute;
-  inset: 0; width: 100%; height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity .65s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.pg-featured-img.active { opacity: 1; }
-
-.pg-featured-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(0deg, rgba(26,10,10,0.88) 0%, rgba(26,10,10,0.4) 60%, transparent 100%);
-  padding: 28px 24px 22px;
-  z-index: 3;
-}
-.pg-caption-tag {
-  display: inline-block;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 1.2px; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 50px;
-  margin-bottom: 8px;
-}
-.pg-caption-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(15px, 2vw, 20px);
-  font-weight: 800; color: #fff;
-  line-height: 1.2; margin-bottom: 6px;
-}
-.pg-caption-sub { font-size: 12px; color: rgba(255,255,255,0.6); }
-
-/* Progress bar */
-.pg-progress-bar {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 3px; background: rgba(255,255,255,0.15); z-index: 4;
-}
-.pg-progress-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--gold), var(--red));
-  width: 0%;
-  border-radius: 0 2px 2px 0;
-  transition: none;
-}
-.pg-progress-fill.animating {
-  transition: width var(--dur, 4500ms) linear;
-}
-
-/* Expand icon */
-.pg-expand-icon {
-  position: absolute; top: 14px; right: 14px;
-  width: 32px; height: 32px; border-radius: 8px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; color: rgba(255,255,255,0.8);
-  opacity: 0; transition: opacity .2s;
-  z-index: 4; cursor: pointer;
-}
-.pg-featured:hover .pg-expand-icon { opacity: 1; }
-
-/* Slide counter */
-.pg-counter {
-  position: absolute; top: 14px; left: 14px;
-  background: rgba(26,10,10,0.55);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 50px;
-  padding: 4px 12px;
-  font-size: 11px; font-weight: 700;
-  color: rgba(255,255,255,0.8);
-  backdrop-filter: blur(4px);
-  z-index: 4; letter-spacing: .5px;
-}
-
-/* ── THUMBNAILS ──────────────────────────────── */
-.pg-thumbs { display: none; }
-.pg-thumb {
-  position: relative;
-  border-radius: 14px; overflow: hidden;
-  aspect-ratio: 4/3;
-  background: var(--dark);
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all .25s;
-}
-.pg-thumb:hover { border-color: rgba(192,57,43,0.4); transform: translateX(3px); }
-.pg-thumb.active { border-color: var(--red); box-shadow: 0 4px 20px rgba(192,57,43,0.25); transform: translateX(3px); }
-.pg-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; display: block; }
-.pg-thumb:hover img { transform: scale(1.04); }
-.pg-thumb-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(26,10,10,0.75) 0%, transparent 60%);
-  padding: 10px;
-  display: flex; flex-direction: column; justify-content: flex-end;
-}
-.pg-thumb-title { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 700; color: #fff; line-height: 1.3; }
-.pg-thumb-num {
-  position: absolute; top: 8px; left: 8px;
-  width: 22px; height: 22px; border-radius: 6px;
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.2);
-  font-size: 10px; font-weight: 700; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-}
-.pg-thumb.active .pg-thumb-num { background: var(--red); border-color: var(--red); }
-
-/* ── DOTS ────────────────────────────────────── */
-.pg-dots { display: flex; justify-content: center; gap: 7px; margin-top: 22px; }
-.pg-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--border); cursor: pointer;
-  transition: all .25s; border: none; padding: 0;
-}
+.pg-slideshow { position: relative; width: 100%; max-width: 900px; aspect-ratio: 16/9; height: auto; margin: 0 auto; border-radius: 20px; overflow: hidden; background: #1A0A0A; box-shadow: 0 16px 48px rgba(192,57,43,0.2); }
+.pg-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity 0.7s ease; background: #1A0A0A; }
+.pg-slide.active { opacity: 1; }
+.pg-counter { position: absolute; top: 14px; left: 14px; background: rgba(26,10,10,0.6); border: 1px solid rgba(255,255,255,0.15); border-radius: 50px; padding: 4px 12px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.85); z-index: 5; letter-spacing: .5px; backdrop-filter: blur(4px); font-family: 'DM Sans', sans-serif; }
+.pg-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: rgba(255,255,255,0.12); z-index: 5; }
+.pg-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #D4A017, #C0392B); border-radius: 0 2px 2px 0; transition: none; }
+.pg-bar-fill.running { transition: width var(--spd, 4500ms) linear; }
+.pg-expand { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; border-radius: 7px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); font-size: 13px; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; transition: opacity .2s; z-index: 5; }
+.pg-slideshow:hover .pg-expand { opacity: 1; }
+.pg-dots { display: flex; justify-content: center; gap: 7px; margin-top: 20px; }
+.pg-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; transition: all .25s; padding: 0; }
 .pg-dot.active { background: var(--red); width: 24px; border-radius: 4px; }
-.pg-dot:hover:not(.active) { background: rgba(192,57,43,0.4); }
-
-/* ── LIGHTBOX ────────────────────────────────── */
-.pg-lightbox {
-  position: fixed; inset: 0;
-  background: rgba(26,10,10,0.94);
-  z-index: 9999;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity .3s;
-  backdrop-filter: blur(8px);
-}
+.pg-lightbox { position: fixed; inset: 0; background: rgba(10,5,5,0.95); z-index: 99999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .3s; backdrop-filter: blur(10px); }
 .pg-lightbox.open { opacity: 1; pointer-events: auto; }
-.pg-lightbox img {
-  max-width: 90vw; max-height: 88vh;
-  border-radius: 16px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-  object-fit: contain;
-  transform: scale(0.94);
-  transition: transform .3s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
+.pg-lightbox img { max-width: 92vw; max-height: 90vh; border-radius: 14px; object-fit: contain; box-shadow: 0 24px 80px rgba(0,0,0,0.7); transform: scale(0.93); transition: transform .35s cubic-bezier(0.34,1.56,0.64,1); }
 .pg-lightbox.open img { transform: scale(1); }
-.pg-lb-close {
-  position: absolute; top: 20px; right: 20px;
-  width: 42px; height: 42px; border-radius: 50%;
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-  color: #fff; font-size: 18px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: background .2s;
-}
-.pg-lb-close:hover { background: rgba(192,57,43,0.5); }
-.pg-lb-prev, .pg-lb-next {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 44px; height: 44px; border-radius: 50%;
-  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-  color: #fff; font-size: 18px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: all .2s;
-}
-.pg-lb-prev { left: 20px; }
-.pg-lb-next { right: 20px; }
-.pg-lb-prev:hover, .pg-lb-next:hover { background: rgba(192,57,43,0.5); }
-
-/* ── RESPONSIVE ──────────────────────────────── */
-@media (max-width: 860px) {
-  .pg-stage { grid-template-columns: 1fr; }
-  .pg-thumbs { flex-direction: row; overflow-x: auto; padding-bottom: 4px; }
-  .pg-thumb { aspect-ratio: 1; min-width: 80px; flex: 1; }
-  .pg-thumb-title { display: none; }
-}
-@media (max-width: 540px) {
-  .pg-header { flex-direction: column; align-items: flex-start; }
-  .pg-section { padding: 48px 4%; }
-}
-</style>
+.pg-lb-close { position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+.pg-lb-close:hover { background: rgba(192,57,43,0.6); }
+.pg-lb-prev, .pg-lb-next { position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .2s; }
+.pg-lb-prev { left: 18px; }
+.pg-lb-next { right: 18px; }
+.pg-lb-prev:hover, .pg-lb-next:hover { background: rgba(192,57,43,0.6); }
+@media (max-width: 600px) { .pg-slideshow { max-width: 100%; aspect-ratio: 3/4; height: auto; border-radius: 14px; } .pg-section { padding: 40px 4%; } .pg-header { flex-direction: column; align-items: flex-start; gap: 12px; } }</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1746,6 +1309,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="form-note">🔒 No spam. Your info is sent directly to us via WhatsApp.</div>
   </div>
 </section>
+
 <section class="pg-section">
   <div class="pg-inner">
     <div class="pg-header">
@@ -1759,234 +1323,99 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="pg-nav-btn" id="pgNext">&#8594;</button>
       </div>
     </div>
-
-    <div class="pg-stage">
-      <div class="pg-featured" id="pgFeatured">
-        <div class="pg-counter" id="pgCounter">1 / 5</div>
-        <div class="pg-featured-overlay" id="pgOverlay">
-          <div class="pg-caption-tag" id="pgTag"></div>
-          <div class="pg-caption-title" id="pgCapTitle"></div>
-          <div class="pg-caption-sub" id="pgCapSub"></div>
-        </div>
-        <div class="pg-progress-bar"><div class="pg-progress-fill" id="pgFill"></div></div>
-        <div class="pg-expand-icon" id="pgExpand">⤢</div>
-      </div>
-      <div class="pg-thumbs" id="pgThumbs"></div>
+    <div class="pg-slideshow" id="pgShow">
+      <span class="pg-counter" id="pgCounter">1 / 5</span>
+      <div class="pg-bar"><div class="pg-bar-fill" id="pgFill"></div></div>
+      <div class="pg-expand" id="pgExpand">⤢</div>
     </div>
-
     <div class="pg-dots" id="pgDots"></div>
   </div>
 </section>
 
-<!-- Lightbox -->
 <div class="pg-lightbox" id="pgLightbox">
   <button class="pg-lb-close" id="pgLbClose">✕</button>
   <button class="pg-lb-prev" id="pgLbPrev">&#8592;</button>
-  <img src="" alt="" id="pgLbImg">
+  <img src="" alt="Poster" id="pgLbImg">
   <button class="pg-lb-next" id="pgLbNext">&#8594;</button>
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════════════
-   ▼▼▼  YOUR POSTER DATA — EDIT THIS SECTION ONLY  ▼▼▼
-
-   HOW TO ADD / UPDATE A POSTER:
-   1. Design your poster in Canva (recommended size: 1200×900px)
-   2. Upload to Google Drive → right-click → Share → "Anyone with link"
-   3. Copy the file ID from the share URL:
-        https://drive.google.com/file/d/  FILE_ID_HERE  /view
-   4. Replace url with:
-        https://drive.google.com/uc?export=view&id=FILE_ID_HERE
-   5. Update title, caption, and tag text.
-   6. Set  active: false  to hide a poster without deleting it.
-   7. Change AUTO_INTERVAL_MS to adjust slideshow speed (ms).
-   ═══════════════════════════════════════════════════════ */
-
+/* ▼▼▼ EDIT ONLY THIS — update urls to your actual poster file paths ▼▼▼ */
 const POSTERS = [
-  {
-    url:'Assets/Poster1.png',
-    title: 'JEE/NEET 2027 Batch — Now Open!',
-    caption: 'Limited seats. IITian faculty. Enroll before June 1st.',
-    tag: '🔥 New Batch',
-    tagColor: '#C0392B',
-    tagBg: 'rgba(192,57,43,0.25)',
-    active: true   // ← set false to hide this poster
-  },
-  {
-    url:'Assets/Poster2.png',
-    title: 'Mentorship Program',
-    caption: 'Perosnal One-2-one Mentorship',
-    tag: '🧬 NEET',
-    tagColor: '#27AE60',
-    tagBg: 'rgba(39,174,96,0.25)',
-    active: true
-  },
-  {
-    url: 'https://placehold.co/1200x900/D4A017/ffffff?font=syne&text=Free+Demo+Class%0AThis+Weekend+%E2%9A%A1',
-    title: 'Free Demo Class — This Weekend',
-    caption: 'No payment. No commitment. One class changes everything.',
-    tag: '⚡ Free Event',
-    tagColor: '#D4A017',
-    tagBg: 'rgba(212,160,23,0.25)',
-    active: true
-  },
-  {
-    url: 'https://placehold.co/1200x900/1A0A0A/E74C3C?font=syne&text=Vidya+AI+Tutor%0ASolve+Doubts+24%2F7+%F0%9F%A4%96',
-    title: 'Vidya AI — Doubts Solved at 2 AM',
-    caption: "India's first AI tutor for JEE & NEET. Always on.",
-    tag: '🤖 New Feature',
-    tagColor: '#E74C3C',
-    tagBg: 'rgba(231,76,60,0.25)',
-    active: true
-  },
-  {
-    url: 'https://placehold.co/1200x900/2C1A1A/D4A017?font=syne&text=College+Counselling%0ANIT+%7C+AIIMS+%7C+BITS+%F0%9F%8E%93',
-    title: 'College Counselling — Book Free Slot',
-    caption: 'Find the right college for your rank. Free service.',
-    tag: '🎓 Free Service',
-    tagColor: '#D4A017',
-    tagBg: 'rgba(212,160,23,0.25)',
-    active: true
-  }
+  { url: 'Assets/Poster1.png', active: true },
+  { url: 'Assets/Poster2.png', active: true },
+  { url: 'Assets/Poster3.png', active: true },
+  { url: 'Assets/Poster4.png', active: true },
+  { url: 'Assets/Poster5.png', active: true },
 ];
+const SPEED = 4500;
+/* ▲▲▲ STOP EDITING ▲▲▲ */
 
-const AUTO_INTERVAL_MS = 4500; /* Slideshow speed in milliseconds */
-
-/* ═══════════════════════════════════════════════
-   ▲▲▲  STOP EDITING — Engine below  ▲▲▲
-   ═══════════════════════════════════════════════ */
-(function () {
-  const slides = POSTERS.filter(p => p.active);
+(function(){
+  const slides  = POSTERS.filter(p => p.active);
   if (!slides.length) return;
-
-  const featured   = document.getElementById('pgFeatured');
-  const thumbsEl   = document.getElementById('pgThumbs');
-  const dotsEl     = document.getElementById('pgDots');
-  const fillEl     = document.getElementById('pgFill');
-  const counterEl  = document.getElementById('pgCounter');
-  const tagEl      = document.getElementById('pgTag');
-  const capTitle   = document.getElementById('pgCapTitle');
-  const capSub     = document.getElementById('pgCapSub');
-  const pauseBtn   = document.getElementById('pgPause');
-  const prevBtn    = document.getElementById('pgPrev');
-  const nextBtn    = document.getElementById('pgNext');
-  const expandBtn  = document.getElementById('pgExpand');
-  const lightbox   = document.getElementById('pgLightbox');
-  const lbImg      = document.getElementById('pgLbImg');
-  const lbClose    = document.getElementById('pgLbClose');
-  const lbPrev     = document.getElementById('pgLbPrev');
-  const lbNext     = document.getElementById('pgLbNext');
-
-  let current = 0, timer = null, paused = false;
-
-  /* Build featured images */
+  const show     = document.getElementById('pgShow');
+  const fill     = document.getElementById('pgFill');
+  const counter  = document.getElementById('pgCounter');
+  const dotsWrap = document.getElementById('pgDots');
+  const pauseBtn = document.getElementById('pgPause');
+  const prevBtn  = document.getElementById('pgPrev');
+  const nextBtn  = document.getElementById('pgNext');
+  const expandBtn= document.getElementById('pgExpand');
+  const lightbox = document.getElementById('pgLightbox');
+  const lbImg    = document.getElementById('pgLbImg');
+  const lbClose  = document.getElementById('pgLbClose');
+  const lbPrev   = document.getElementById('pgLbPrev');
+  const lbNext   = document.getElementById('pgLbNext');
+  let cur = 0, timer = null, paused = false;
   slides.forEach((p, i) => {
     const img = document.createElement('img');
-    img.src = p.url; img.alt = p.title;
-    img.className = 'pg-featured-img' + (i === 0 ? ' active' : '');
-    img.dataset.index = i;
-    featured.insertBefore(img, featured.querySelector('.pg-counter'));
+    img.src = p.url; img.alt = 'Poster ' + (i+1);
+    img.className = 'pg-slide' + (i === 0 ? ' active' : '');
+    show.insertBefore(img, show.querySelector('.pg-counter'));
   });
-
-  /* Build thumbnails */
-  slides.forEach((p, i) => {
-    const d = document.createElement('div');
-    d.className = 'pg-thumb' + (i === 0 ? ' active' : '');
-    d.innerHTML = `
-      <img src="${p.url}" alt="${p.title}" loading="lazy">
-      <div class="pg-thumb-overlay"><div class="pg-thumb-title">${p.title}</div></div>
-      <div class="pg-thumb-num">${i + 1}</div>`;
-    d.addEventListener('click', () => goTo(i, true));
-    thumbsEl.appendChild(d);
-  });
-
-  /* Build dots */
   slides.forEach((_, i) => {
     const b = document.createElement('button');
     b.className = 'pg-dot' + (i === 0 ? ' active' : '');
     b.addEventListener('click', () => goTo(i, true));
-    dotsEl.appendChild(b);
+    dotsWrap.appendChild(b);
   });
-
-  function goTo(idx, manual = false) {
-    current = (idx + slides.length) % slides.length;
-    const p = slides[current];
-
-    featured.querySelectorAll('.pg-featured-img').forEach((img, i) => img.classList.toggle('active', i === current));
-    thumbsEl.querySelectorAll('.pg-thumb').forEach((t, i) => t.classList.toggle('active', i === current));
-    dotsEl.querySelectorAll('.pg-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-
-    counterEl.textContent = `${current + 1} / ${slides.length}`;
-    tagEl.textContent = p.tag;
-    tagEl.style.cssText = `color:${p.tagColor};background:${p.tagBg};border:1px solid ${p.tagColor}55;`;
-    capTitle.textContent = p.title;
-    capSub.textContent   = p.caption;
-
-    resetProgress();
-    if (!paused) startProgress();
-    if (manual) { clearInterval(timer); startTimer(); }
+  function goTo(idx, manual) {
+    cur = (idx + slides.length) % slides.length;
+    show.querySelectorAll('.pg-slide').forEach((img, i) => img.classList.toggle('active', i === cur));
+    dotsWrap.querySelectorAll('.pg-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+    counter.textContent = (cur+1) + ' / ' + slides.length;
+    fill.classList.remove('running'); fill.style.width = '0%';
+    fill.style.setProperty('--spd', SPEED + 'ms');
+    if (!paused) requestAnimationFrame(() => requestAnimationFrame(() => { fill.classList.add('running'); fill.style.width = '100%'; }));
+    if (manual) { clearInterval(timer); if (!paused) startTimer(); }
   }
-
-  function resetProgress() {
-    fillEl.classList.remove('animating');
-    fillEl.style.width = '0%';
-    fillEl.style.setProperty('--dur', AUTO_INTERVAL_MS + 'ms');
-  }
-  function startProgress() {
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      fillEl.classList.add('animating');
-      fillEl.style.width = '100%';
-    }));
-  }
-  function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => { if (!paused) goTo(current + 1); }, AUTO_INTERVAL_MS);
-  }
-
-  prevBtn.addEventListener('click', () => goTo(current - 1, true));
-  nextBtn.addEventListener('click', () => goTo(current + 1, true));
-
+  function startTimer() { clearInterval(timer); timer = setInterval(() => goTo(cur + 1), SPEED); }
   pauseBtn.addEventListener('click', () => {
     paused = !paused;
     pauseBtn.textContent = paused ? '▶ Resume' : '⏸ Pause';
     pauseBtn.classList.toggle('paused', paused);
-    if (paused) { clearInterval(timer); fillEl.classList.remove('animating'); }
-    else { startTimer(); startProgress(); }
+    if (paused) { clearInterval(timer); fill.classList.remove('running'); }
+    else { goTo(cur); startTimer(); }
   });
-
-  /* Lightbox */
-  function openLb() {
-    lbImg.src = slides[current].url;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+  prevBtn.addEventListener('click', () => goTo(cur - 1, true));
+  nextBtn.addEventListener('click', () => goTo(cur + 1, true));
+  function openLb() { lbImg.src = slides[cur].url; lightbox.classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeLb() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
   expandBtn.addEventListener('click', openLb);
-  featured.addEventListener('dblclick', openLb);
+  show.addEventListener('dblclick', openLb);
   lbClose.addEventListener('click', closeLb);
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLb(); });
-  lbPrev.addEventListener('click', e => { e.stopPropagation(); goTo(current - 1, true); lbImg.src = slides[current].url; });
-  lbNext.addEventListener('click', e => { e.stopPropagation(); goTo(current + 1, true); lbImg.src = slides[current].url; });
-
-  /* Keyboard */
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft')  goTo(current - 1, true);
-    if (e.key === 'ArrowRight') goTo(current + 1, true);
-    if (e.key === 'Escape')     closeLb();
-  });
-
-  /* Swipe */
-  let tx = 0;
-  featured.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-  featured.addEventListener('touchend',   e => {
-    const d = tx - e.changedTouches[0].clientX;
-    if (Math.abs(d) > 40) goTo(d > 0 ? current + 1 : current - 1, true);
-  });
-
-  goTo(0);
-  startTimer();
+  lbPrev.addEventListener('click', e => { e.stopPropagation(); goTo(cur-1,true); lbImg.src=slides[cur].url; });
+  lbNext.addEventListener('click', e => { e.stopPropagation(); goTo(cur+1,true); lbImg.src=slides[cur].url; });
+  document.addEventListener('keydown', e => { if(e.key==='ArrowLeft') goTo(cur-1,true); if(e.key==='ArrowRight') goTo(cur+1,true); if(e.key==='Escape') closeLb(); });
+  let tx=0;
+  show.addEventListener('touchstart', e => { tx=e.touches[0].clientX; }, {passive:true});
+  show.addEventListener('touchend', e => { const d=tx-e.changedTouches[0].clientX; if(Math.abs(d)>40) goTo(d>0?cur+1:cur-1,true); });
+  goTo(0); startTimer();
 })();
 </script>
+
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-inner">
