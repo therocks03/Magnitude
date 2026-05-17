@@ -1248,12 +1248,13 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; pad
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: 16/9;
+  aspect-ratio: 3/4;
   max-width: 600px;
   margin: 0 auto;
   background: var(--dark);
   box-shadow: 0 16px 48px rgba(192,57,43,0.18);
   cursor: pointer;
+  display: block;
 }
 .pg-featured-img {
   position: absolute;
@@ -1261,6 +1262,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; pad
   object-fit: contain;
   opacity: 0;
   transition: opacity .65s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #1A0A0A;
 }
 .pg-featured-img.active { opacity: 1; }
 
@@ -1404,10 +1406,9 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; pad
 
 /* ── STAGE ───────────────────────────────────── */
 .pg-stage {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 20px;
-  align-items: start;
+  display: flex;
+justify-content: center;
+  width: 100%;
 }
 
 /* Featured poster */
