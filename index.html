@@ -1160,7 +1160,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; pad
 
 /* ── SECTION WRAPPER ────────────────────────── */
 .pg-section {
-  padding: 72px 5%;
+  padding: 72px 0;
   background: linear-gradient(160deg, #FFFAF8 0%, #FFF5F5 60%, #F5FFF8 100%);
   position: relative;
   overflow: hidden;
@@ -1174,7 +1174,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; pad
   background: radial-gradient(circle, rgba(192,57,43,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
-.pg-inner { max-width: 1300px; margin: 0 auto; }
+.pg-inner { max-width: 100%; margin: 0; padding: 0 5%; }
 
 /* ── HEADER ─────────────────────────────────── */
 .pg-header {
@@ -1249,6 +1249,8 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; margin: 0; pad
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 16/9;
+  max-width: 600px;
+  margin: 0 auto;
   background: var(--dark);
   box-shadow: 0 16px 48px rgba(192,57,43,0.18);
   cursor: pointer;
